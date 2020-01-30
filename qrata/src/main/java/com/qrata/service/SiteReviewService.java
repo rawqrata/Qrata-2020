@@ -2,6 +2,7 @@ package com.qrata.service;
 
 import java.util.List;
 
+import com.qrata.entity.ItemDetailForm;
 import com.qrata.entity.SiteReviewForm;
 import com.qrata.entity.SiteStatusAndScoreForm;
 import com.qrata.enums.ReviewStatus;
@@ -99,6 +100,7 @@ public interface SiteReviewService {
 	public int getExpertTotalRatings(User user);
     public SiteReviewRatingCriteria getSiteReviewRatingCriteriaById(long id);
     public List<SiteReviewForm> qrataSearch_Keyword(String keyword, int start, int pageSize);
+    public List<ItemDetailForm> qrataSearch_Keywordnew(String keyword, int start, int pageSize);
     public String qrataSearchKeywords_SearchTerm(String searchTerm);
     public void addSiteReviewRatingCriteriaVotings(List<SiteReviewRatingCriteriaVoting> criteriaVotings);
     public SiteReviewForm getSiteReviewRatingCriteriaVotingPercentage(SiteReviewForm siteReview);

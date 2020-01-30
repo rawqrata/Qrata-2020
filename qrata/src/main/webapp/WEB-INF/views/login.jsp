@@ -1,7 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1" session="false" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <c:set var="ctx" value="${pageContext.request.contextPath}" />
+<%@page import="com.qrata.enums.Constants"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@ taglib prefix="display" uri="http://displaytag.sf.net" %>
+
+<c:import url="../header.jsp"/>
 
 <html>
 <head>
@@ -44,8 +49,12 @@
 			<div class="back-logo-qrata">
 				<img src="${ctx}/resources/images/back-bg-logo.png" />
 			</div>
-
-			<form name="f" action="<c:url value='/login.do'/>"
+<c:if test="${not empty usernotexist}">
+<div  class="alert alert-danger">
+  <strong>Not Exist!</strong>${usernotexist}
+</div>
+</c:if>
+			<form name="f" action="<c:url value='/admin/logincheck.htm'/>"
 				method="POST" onsubmit="return validate();" >
 				<!--login-->
 				<div class="login-box">
@@ -70,7 +79,7 @@
 											onblur="if (this.value=='') this.value='Backoffice ID or email';"
 											onfocus="if (this.value=='Backoffice ID or email') this.value='';"
 											class="input_border email" name="j_username" id="txtEmail"
-											value="Backoffice ID or email" />
+											placeholder="Backoffice ID or email" />
 									</p>
 									</li>
 								<li><label>Password:</label>
@@ -78,7 +87,7 @@
 										<input type="password"
 											onblur="if (this.value=='') this.value='password';"
 											onfocus="if (this.value=='password') this.value='';"
-											class="input_border" value="password" name="j_password"
+											class="input_border" placeholder="password" name="j_password"
 											id="txtPassword" />
 									</p> <span id="validatePassword" class="validation-action"></span>
 								</li>

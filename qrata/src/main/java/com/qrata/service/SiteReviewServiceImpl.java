@@ -24,17 +24,20 @@ import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.qrata.entity.ItemDetailForm;
 import com.qrata.entity.SiteReviewForm;
 import com.qrata.entity.SiteStatusAndScoreForm;
 import com.qrata.enums.ReadStatus;
 import com.qrata.enums.ReviewStatus;
 import com.qrata.enums.Status;
 import com.qrata.models.Category;
+import com.qrata.models.ItemDetails;
 import com.qrata.models.SiteReview;
 import com.qrata.models.SiteReviewRatingCriteria;
 import com.qrata.models.SiteReviewRatingCriteriaVoting;
 import com.qrata.models.Topic;
 import com.qrata.models.User;
+import com.qrata.respository.ItemDetailsRepository;
 import com.qrata.respository.SiteReviewRatingCriteriaVotingRepository;
 import com.qrata.respository.SiteReviewsRepository;
 
@@ -44,6 +47,9 @@ public class SiteReviewServiceImpl implements SiteReviewService {
 
 	@Autowired
 	private SiteReviewsRepository siteReviewsRepository;
+	
+	@Autowired
+	private ItemDetailsRepository itemdetailsRepository;
 	
 	@Autowired
 	private SiteReviewRatingCriteriaVotingRepository votingRepository;
@@ -509,6 +515,51 @@ public class SiteReviewServiceImpl implements SiteReviewService {
         }
         return reviewsFormList;
 	}
+	
+	
+	@Override
+	public List<ItemDetailForm> qrataSearch_Keywordnew(String keyword, int start, int pageSize) {
+		 //first query for all words in search
+        keyword = keyword.trim().replace(":", "").replace(" ", "&");
+//        List<SiteReview> exactMatchReviewsList =siteReviewsRepository.qrataSearchKeywords_SearchTerm(keyword);
+        List<ItemDetails> exactMatchReviewsList =itemdetailsRepository.qrataSearchKeywords_SearchTerm1(keyword);
+
+        int exactMatchReviewsListSize = exactMatchReviewsList.size();
+        pageSize = pageSize - exactMatchReviewsListSize;
+
+        //if multiple word search, do an OR'd query
+        if (keyword.contains("&")) {
+			/*
+			 * keyword = StringUtils.isNotEmpty(keyword) ? keyword.replaceAll("&", "|") :
+			 * ""; List<SiteReview> wildCardMatchReviewsList =
+			 * siteReviewsDao.qrataSearch_Keyword(keyword, start, pageSize);
+			 * exactMatchReviewsList.addAll(wildCardMatchReviewsList);
+			 */
+        }
+
+        List<ItemDetailForm> reviewsFormList = new ArrayList<>();
+        ItemDetailForm form = null;
+        for (ItemDetails sr : exactMatchReviewsList) {
+            form = new ItemDetailForm();
+            try {
+                BeanUtils.copyProperties(form, sr);
+                form.setCategoryID(sr.getCategoryID());
+                form.setItem_id(sr.getItemid());
+                form.setRatings(sr.getRatings());
+                form.setItem_name(sr.getItemName());
+                form.setItem_image(sr.getItemImage());
+                form.setItem_description(sr.getItemDescription());
+            } catch (IllegalAccessException e) {
+                e.printStackTrace();
+            } catch (InvocationTargetException e) {
+                e.printStackTrace();
+            }
+            reviewsFormList.add(form);
+        }
+        return reviewsFormList;
+	}
+	
+	
 
 	@Override
 	public String qrataSearchKeywords_SearchTerm(String searchTerm) {

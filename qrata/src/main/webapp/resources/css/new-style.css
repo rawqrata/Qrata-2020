@@ -131,7 +131,6 @@ div#hd {
     top: 0;
     right: 0;
     padding: 10px 12px;
-    pointer-events: none;
 }
 
 .left-inner-addon {
@@ -276,6 +275,26 @@ div.heat {
     height: 100%;
     background-color: red
 }
+.custom_table{
+	background:#DEDADB;
+	    max-width: 650px;
+    float: right;
+    padding:10px;
+    margin-top: 45px;
+}
+.custom_table table th {
+    display: none;
+}
+.custom_table table tbody tr:nth-of-type(2n+1) {
+    background-color: #FEE1B2 !important;
+}
+.custom_table table tbody tr.even {
+    background:#EDEDEF;
+}
+.custom_table table tbody tr a {
+    display: inline-block;
+    width: 100%;
+}
 
 @media (min-width: 992px) {
 
@@ -300,3 +319,9 @@ div.heat {
         padding-right: 30px;
     }
 }
+
+.remove-margin{
+	margin-left: 0px;
+	margin-right: 0px;
+}
+.remove_border_left{border-left: 0px;}

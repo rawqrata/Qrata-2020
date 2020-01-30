@@ -116,13 +116,13 @@
 						<p class="p1">Where search ends &amp; <span class='red'>knowledge</span>&nbsp;<span class='red'>begins!</span><span class='trade'>&trade;</span></p>
 					</div>
 				</div>
-				</div>
-				
+				</div>				
 			</div>
-			<div class="col-sm-8 col-md-6 move-up">
+			
+			<div class="col-sm-8  col-md-9 move-up">
 				<div class="row">
-					<div class="col-md-offset-1 col-md-10 no-padding">
-						<form accept-charset="UTF-8" action="${ctx}/reviews/search.htm" class="form-search" method="get">
+					<div class="col-md-8 no-padding">
+						<form accept-charset="UTF-8" id="search_frm" action="${ctx}/reviews/search.htm" class="form-search" method="get">
 							<input type="hidden" name="contxt" id="contxt" value="${ctx}" />
 							<div style="margin: 0; padding: 0; display: inline">
 								<input name="utf8" type="hidden" value="&#x2713;" />
@@ -130,13 +130,11 @@
 							<div class="right-inner-addon">
 								<input type="text" id="searchTerm" name="q" value="${q}"
 									class="form-control" placeholder="Q/Search" />
-								<button type="submit" class="btn btn-sm btn-default">
+								<button type="submit" id="search_btn" class="btn btn-sm btn-default" >
 									<span class="glyphicon glyphicon-search"></span>
 								</button>
 							</div>
-								<div class="col-md-offset-9 col-md-2 qsearch">
-					<span class="red">Q</span> <span class="yellow">/</span> <span>Search</span>
-				</div>
+								
 						</form>
 					</div>
 				</div>

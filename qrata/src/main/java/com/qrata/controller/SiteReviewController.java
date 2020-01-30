@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.qrata.entity.ItemDetailForm;
 import com.qrata.entity.SiteReviewForm;
 import com.qrata.service.SiteReviewService;
 import com.qrata.service.TopicService;
@@ -57,12 +58,13 @@ public class SiteReviewController {
 	@RequestMapping(value="search.htm", method={RequestMethod.GET, RequestMethod.POST})
 	public String qrataSearchByKeyword(HttpServletRequest request, Model model, 
 			@RequestParam(value="q", required=false) String keyword) {
-		List<SiteReviewForm> reviewsList = null;
+//		List<SiteReviewForm> reviewsList = null;
+		List<ItemDetailForm> reviewsList = null;
 //		int start = PaginationUtility.getStartOffsetByRequestAndTableId(request, "siteReview");		
 //		int totalReviews = 0;
 		if(keyword != null ){
 //			totalReviews = siteReviewService.getQrataSearchCount_Keyword(keyword);
-			reviewsList = siteReviewService.qrataSearch_Keyword(keyword, 0, 100);
+			reviewsList = siteReviewService.qrataSearch_Keywordnew(keyword, 0, 100);
 		}
 		
 		model.addAttribute("q", keyword);

@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -189,6 +190,18 @@ public class UserController {
 			e.printStackTrace();
 		}
 		return obj.toString();
+	}
+	
+	@RequestMapping(value={"logincheck.htm"}, method = { RequestMethod.GET, RequestMethod.POST})
+	public String logincheck(HttpSession session, HttpServletRequest request, Model model, @RequestParam("j_username") String uname , @RequestParam("j_password") String pwd) {
+		User user = userRespository.checkUserLogin(uname, pwd);
+		if(user == null) {
+			model.addAttribute("usernotexist", "Not Exist");
+		}else if(user != null) { 
+			session.setAttribute("user_data", user);
+			return "redirect:/";
+		}
+		return "/login";
 	}
 	
 	

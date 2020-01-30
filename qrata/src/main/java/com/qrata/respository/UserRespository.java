@@ -13,6 +13,9 @@ public interface UserRespository extends JpaRepository<User,Long>{
 	@Query("select u from User u where u.userName = :userName")
 	public abstract User findByUserName(@Param("userName") String userName);
 	
+	@Query("select u from User u where u.userName = :userName and u.password = :password")
+	public abstract User checkUserLogin(@Param("userName") String userName, @Param("password") String password);
+	
 	/*
 	 * SELECT * FROM user u INNER JOIN userinfo uf ON u.id = uf.user_id INNER JOIN
 	 * user_roles r ON u.id = r.users_id WHERE u.status = 1 AND r.roles_id = 3 AND

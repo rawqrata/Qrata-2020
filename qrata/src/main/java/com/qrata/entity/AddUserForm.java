@@ -5,10 +5,14 @@ import com.qrata.models.User;
 
 import java.util.*;
 
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
+
 /**
  * @author kamal
  * this is our model class.
  */
+
 public class AddUserForm {
 	private long id;
 	private String uuid;
