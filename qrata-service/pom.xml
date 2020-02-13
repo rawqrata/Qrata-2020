@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<artifactId>qrata</artifactId>
+		<groupId>com.insonix</groupId>
+		<version>1.0-SNAPSHOT</version>
+		<relativePath>../pom.xml</relativePath>
+	</parent>
+	<artifactId>qrata-service</artifactId>
+	<name>qrata-service</name>
+	
+	<dependencies>
+		<dependency>
+			<groupId>com.insonix</groupId>
+			<artifactId>qrata-dao</artifactId>
+			<version>1.0-SNAPSHOT</version>
+			<type>jar</type>
+			<scope>compile</scope>
+			<exclusions>
+				<exclusion>
+          			<groupId>com.insonix</groupId>
+          			<artifactId>qrata-core</artifactId>
+        		</exclusion>
+        		
+        		<exclusion>
+          			<groupId>com.insonix</groupId>
+          			<artifactId>qrata-model</artifactId>
+        		</exclusion>
+        		
+			</exclusions>
+		</dependency>
+		
+		<dependency>
+			<groupId>com.insonix</groupId>
+			<artifactId>qrata-core</artifactId>
+			<version>1.0-SNAPSHOT</version>
+			<type>jar</type>
+			<scope>compile</scope>
+		</dependency>
+		
+		<dependency>
+			<groupId>com.insonix</groupId>
+			<artifactId>qrata-model</artifactId>
+			<version>1.0-SNAPSHOT</version>
+			<type>jar</type>
+			<scope>compile</scope>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.json</groupId>
+			<artifactId>json</artifactId>
+		</dependency>
+		
+		<dependency>
+			<groupId>commons-beanutils</groupId>
+			<artifactId>commons-beanutils</artifactId>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-beans</artifactId>
+		</dependency>		
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-core</artifactId>
+		</dependency>
+		
+	</dependencies>
+</project>

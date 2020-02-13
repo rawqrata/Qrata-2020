@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory>
+		<mapping class="com.insonix.qrata.models.Category"></mapping>
+		<mapping class="com.insonix.qrata.models.RatingCriteria"></mapping>
+		<mapping class="com.insonix.qrata.models.RelatedTopics"></mapping>
+		<mapping class="com.insonix.qrata.models.Role"></mapping>
+		<mapping class="com.insonix.qrata.models.Site"></mapping>
+		<mapping class="com.insonix.qrata.models.SiteReview"></mapping>
+		<mapping class="com.insonix.qrata.models.SiteReviewRatingCriteria"></mapping>
+		<mapping class="com.insonix.qrata.models.SiteReviewComments"></mapping>
+		<mapping class="com.insonix.qrata.models.Topic"></mapping>
+		<mapping class="com.insonix.qrata.models.TopicExpertAssignment"></mapping>
+		<mapping class="com.insonix.qrata.models.TopicRatingCriteria"></mapping>
+		<mapping class="com.insonix.qrata.models.User"></mapping>
+		<mapping class="com.insonix.qrata.models.UserInfo"></mapping>
+		<mapping class="com.insonix.qrata.models.SiteReviewRatingCriteriaVoting"></mapping>
+	</session-factory>
+</hibernate-configuration>

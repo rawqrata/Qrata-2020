@@ -1,0 +1,123 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <artifactId>qrata</artifactId>
+    <groupId>com.insonix</groupId>
+    <version>1.0-SNAPSHOT</version>
+    <relativePath>..</relativePath>
+  </parent>
+  <artifactId>qrata-api</artifactId>
+  <packaging>war</packaging>
+  <name>qrata-api</name>
+  <description>For api's for plugin</description>
+  
+  <dependencies>   		
+  		<dependency>
+			<groupId>com.google.code.gson</groupId>
+			<artifactId>gson</artifactId>
+		</dependency>
+		<dependency>
+	        <groupId>net.sf.ehcache</groupId>
+	        <artifactId>ehcache-core</artifactId>
+    	</dependency>
+		
+		<dependency>
+			<groupId>com.insonix</groupId>
+			<artifactId>qrata-service</artifactId>
+			<version>1.0-SNAPSHOT</version>
+			<type>jar</type>
+			<scope>compile</scope>
+			<exclusions>
+				<exclusion>
+					<artifactId>ejb3-persistence</artifactId>
+					<groupId>org.hibernate</groupId>
+				</exclusion>
+				<exclusion>
+					<artifactId>thumbnailator</artifactId>
+					<groupId>net.coobird</groupId>
+				</exclusion>
+				<exclusion>
+					<artifactId>jasypt</artifactId>
+					<groupId>org.jasypt</groupId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		
+		
+		<!-- Postgres Driver -->
+		<dependency>
+			<groupId>postgresql</groupId>
+			<artifactId>postgresql</artifactId>
+			<scope>runtime</scope>
+		</dependency>
+		<!-- End Driver -->
+		
+		 <!-- cxf dependencies -->	    
+	    <dependency>
+		    <groupId>org.apache.cxf</groupId>
+		    <artifactId>cxf-rt-frontend-jaxrs</artifactId>
+		</dependency>		
+		<dependency>
+		    <groupId>org.apache.cxf</groupId>
+		    <artifactId>cxf-rt-transports-http</artifactId>
+		</dependency>		
+		<dependency>
+			<groupId>org.apache.cxf</groupId>
+			<artifactId>cxf-rt-rs-security-cors</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.cxf</groupId>
+			<artifactId>cxf-common-utilities</artifactId>
+		</dependency>
+	    <!-- end of cxf -->
+
+		<!-- log4j -->
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<exclusions>
+				<exclusion>
+					<groupId>javax.mail</groupId>
+					<artifactId>mail</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>javax.jms</groupId>
+					<artifactId>jms</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>com.sun.jdmk</groupId>
+					<artifactId>jmxtools</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>com.sun.jmx</groupId>
+					<artifactId>jmxri</artifactId>
+				</exclusion>
+			</exclusions>
+			<scope>compile</scope>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.apache.openejb</groupId>
+			<artifactId>commons-dbcp-all</artifactId>
+			<scope>runtime</scope>
+		</dependency>
+		
+		<!-- Hibernate Libraries -->
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate</artifactId>
+			<exclusions>
+				<exclusion>
+					<artifactId>ehcache</artifactId>
+					<groupId>net.sf.ehcache</groupId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-log4j12</artifactId>
+		</dependency>
+
+	</dependencies>
+</project>
