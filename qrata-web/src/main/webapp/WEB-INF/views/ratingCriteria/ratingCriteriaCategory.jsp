@@ -55,7 +55,7 @@
 		</form:form> --%>
 
 		<span>
-<!-- 			To add a new Criteria Group to this list, <a href="addCriteriaCategory.htm">click here..</a> -->&nbsp;
+ 			To add a new Criteria Group to this list, <a href="addCriteriaCategory.htm">click here..</a>&nbsp;
 		</span>
 		<table width="100%"
 			class="table table-striped table-hover table-bordered table-condensed">
@@ -73,9 +73,9 @@
 					<tr>
 						<td><a
 							href="${ctx}/admin/ratingCriteria.htm?id=${criteria.id}">${criteria.name}</a></td>
-<!-- 						<td class="yes"><a -->
-<%-- 							href="${ctx}/admin/editCriteriaCategory.htm?id=${criteria.id}"><i --%>
-<!-- 								class="icon-pencil"></i></a></td> -->
+ 						<td class="yes"><a 
+ 							href="${ctx}/admin/editCriteriaCategory.htm?id=${criteria.id}"><i 
+ 								class="icon-pencil"></i></a></td>
 <!-- 						<td class="yes"><a -->
 <%-- 							href="deleteCriteriaCategory.htm?id=${criteria.id}" --%>
 <!-- 							onclick="return confirm('Warning: This deletes the data from everywhere! are you sure ?')"><i -->
