@@ -84,7 +84,7 @@ that._renderItemData( ul, item );
 					
 				</div>
 				<div style="float: right;   font-size: 12px;   margin-left: 25px;   margin-top: -22px;  padding-top: 4px;"> <span><a href="addUser.htm">Add User<img style=" padding-left: 4px;" src="${ctx }/resources/images/plus-sign.png"></a></span></div>
-				<table class="mediaTable" style="background-color: #E7E7E4;">
+				<table class="mediaTable table table-striped" style="background-color: #E7E7E4;">
 					<thead>
 						<tr>
 							<th class="essential persist">First Name</th>
