@@ -14,7 +14,7 @@
       <script src="${ctx}/resources/js/bootstrap/popper.min.js"></script>
       <script src="${ctx}/resources/js/bootstrap/bootstrap.min.js"></script>
       <script src="https://rawgit.com/JulianLaval/canvas-particle-network/master/particle-network.min.js" type="text/javascript"></script>
-      <link href="${ctx}/resources/images/logo.png" rel="SHORTCUT ICON" />
+       <link href="${ctx}/resources/images/favicon.png" rel="SHORTCUT ICON" />
       <link href="${ctx}/resources/css/style-min.css" rel="stylesheet" type="text/css" />
       <link href="${ctx}/resources/css/jquery-mediaTable-min.css" rel="stylesheet" type="text/css" />
       <script src="${ctx}/resources/js/jquery-1.8.2.min.js" type="text/javascript"></script>

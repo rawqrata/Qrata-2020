@@ -14,7 +14,7 @@
       <script src="${ctx}/resources/js/bootstrap/jquery.min.js"></script>
       <script src="${ctx}/resources/js/bootstrap/popper.min.js"></script>
       <script src="${ctx}/resources/js/bootstrap/bootstrap.min.js"></script>
-      <link href="${ctx}/resources/images/logo.png" rel="SHORTCUT ICON" />
+      <link href="${ctx}/resources/images/favicon.png" rel="SHORTCUT ICON" />
       <link href="${ctx}/resources/css/jquery-ui-1.8.2.custom-min.css" rel="stylesheet" />
       <link href="${ctx}/resources/css/style-min.css" rel="stylesheet" type="text/css" />
       <link href="${ctx}/resources/css/jquery-mediaTable-min.css" rel="stylesheet" />

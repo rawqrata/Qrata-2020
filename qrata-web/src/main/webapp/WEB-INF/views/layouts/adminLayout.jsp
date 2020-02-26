@@ -14,7 +14,7 @@
       <meta name="viewport" content="width=320,user-scalable=false, minimum-scale=1.0, maximum-scale=1.0" />
       <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
       <title>Qrata</title>
-      <link href="${ctx}/resources/images/logo.png" rel="SHORTCUT ICON" />
+      <link href="${ctx}/resources/images/favicon.png" rel="SHORTCUT ICON" />
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
       <link rel="stylesheet" href="${ctx}/resources/css/bootstrap4/bootstrap.min.css">
       <script src="${ctx}/resources/js/bootstrap/jquery.min.js"></script>

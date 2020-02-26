@@ -93,7 +93,7 @@
             </display:column>
             <display:column title="Edit">
                <a href="${ctx}/admin/editSubCategory.htm?id=${subCategory.uuid}&catId=${id}
-                  &prp=${prp}&orp=${orp}&sfrp=${sfrp}&sunrp=${sunrp}"><i class="icon-pencil"></i></a>
+                  &prp=${prp}&orp=${orp}&sfrp=${sfrp}&sunrp=${sunrp}"><i class="fa fa-edit"></i></a>
             </display:column>
             <display:column title="Add Topic">
                <a href="addTopic.htm?id=${subCategory.id}&catId=${id}">Add</a>
@@ -101,7 +101,7 @@
             <display:column title="Delete">
                <a href="deleteSubCategory.htm?id=${subCategory.id}&CategoryId=${id}&prp=${prp}&orp=${orp}&sfrp=${sfrp}&sunrp=${sunrp}" 
                   onclick="return confirm('Warning: This deletes all of the data under this Sub Category (Topic, Sub Topic, Content)! Are you sure?')">
-               <i class="icon-remove"></i>
+               <i class="fa fa-trash"></i>
                </a>
             </display:column>
          </display:table>

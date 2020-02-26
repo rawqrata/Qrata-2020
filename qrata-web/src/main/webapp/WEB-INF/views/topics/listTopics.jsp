@@ -19,6 +19,8 @@
 	</script>
 </head>
 <body>
+<div class="row">
+<div class="col-md-12 text-center">
 	<c:choose>
 		<c:when test="${param.success eq '1' }">
 			<div class="success-box"><c:out value="Topic has been created successfully" /></div>
@@ -33,25 +35,50 @@
 			<div class="success-box"><c:out value="Topic Already Assigned or Topic have Contents or Ratings" /></div>
 		</c:when>
 	</c:choose>
-
+	</div>
+</div>
+<div class="row">
 	<div class="date-text">&nbsp;</div>
+	</div>
+	
+	<div class="row">
+	<div class="col-md-8 col-8">
 	<ul class="shape-design">
 		<li>Manage</li>
 		<li><img src="${ctx}/resources/images/breadcrumb-arrow.png" /></li>
 		<li class="none">Topics</li>
 	</ul>
+	</div>
+	<div class="col-md-4 col-4">
 	<div class="back-button"><a href="javascript:;" onclick="javascript:historyButton()">&#60;&#60; Go Back </a></div>
-	<br /><div class="breadcrumb-style"><h5>Root//<b:breadcrumb separator="/" serialId="${id}" type="CATEGORY" /></h5></div>
-	<div class="center-table">
+	</div>
+	</div>
+	<div class="row">
+	<div class="col-md-12"><h5>Root//<b:breadcrumb separator="/" serialId="${id}" type="CATEGORY" /></h5></div>
+	</div>
+	<div class="topicbox mt-4">
 		<form:form cssClass="form-search" commandName="topicForm" action="listTopics.htm?id=${id}" autocomplete="off">
-			<div class="input-append">
-				<form:input path="topicSearchVal" cssClass="span2 search-query" placeholder="Enter topic name" 
+		<div class="row">
+		
+		            <div class="col-md-12">
+                  <div class=:form-group">
+                     <div class="input-group mb-2 serachinputbox">
+                       <form:input path="topicSearchVal" cssClass="span2 form-control search-query" placeholder="Enter topic name" 
 					id="topicSearch" cssStyle="width: 310px;" />
-				<button type="submit" class="btn">
-					<i class="icon-search"></i>
-				</button>
-			</div>
-		</form:form>
+                        <div class="input-group-prepend">
+                           <span class="input-group-text">
+                           <button type="submit" class="btn">
+                           <i class="fa fa-search"></i>
+                           </button>
+                           </span>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+		
+		</div>
+		
+				</form:form>
 		
 		<span>To add a new Topic to this list, <a
 			href="addTopic.htm?id=${id}&type=c">click here..</a></span>
@@ -105,7 +132,7 @@
 			
 			<display:column title="Edit">
 				<a href="${ctx}/admin/editTopic.htm?id=${topic.uuid}&subCatId=${id}
-					&prp=${prp}&orp=${orp}&sfrp=${sfrp}&sunrp=${sunrp}"><i class="icon-pencil"></i></a>
+					&prp=${prp}&orp=${orp}&sfrp=${sfrp}&sunrp=${sunrp}"><i class="fa fa-edit"></i></a>
 			</display:column>
 			
 			<c:choose>
@@ -122,7 +149,7 @@
 			<display:column title="Delete">
 				<a href="deleteTopics.htm?id=${topic.topicId}&SubCategoryId=${id}&prp=${prp}&orp=${orp}&sfrp=${sfrp}&sunrp=${sunrp}" 
 					onclick="return confirm('Warning:  This deletes all of the data under this Topic (Sub Topic, Content)! Are you sure?')">
-					<i	class="icon-remove"></i>
+				 <i class="fa fa-trash"></i>
 				</a>
 			</display:column>
 		</display:table>

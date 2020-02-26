@@ -60,12 +60,12 @@
             </div>
          </div>
       </div>
-      <div class="subcategorbox mt-4">
+      <div class="subcategorbox mt-2">
          <form:form cssClass="form-search" commandName="categoryForm" action="allSubCategories.htm" autocomplete="off">
             <div class="row">
                <div class="col-md-12">
                   <div class=:form-group">
-                     <div class="input-group mb-2 serachinputbox">
+                     <div class="input-group mb-1 serachinputbox">
                         <form:input path="domainSearchVal" cssClass="span2 form-control search-query" placeholder="Enter sub category name" 
                            id="subCategorySearch" cssStyle="width: 310px;" />
                         <div class="input-group-prepend">
@@ -80,9 +80,7 @@
                </div>
             </div>
          </form:form>
-         <div style="font-size: 12px;">
-            <span>&nbsp;</span>
-         </div>
+     
          <display:table id="subCategory" name="${subCategoryList}" pagesize="10" class="displayTable table table-striped table-hover table-bordered table-condensed" 
             style="margin-bottom:1%;margin-top:1%;" defaultsort="1" sort="external" defaultorder="descending" size="${totalActiveSubCategories}" 
             partialList="true" requestURI="allSubCategories.htm">
@@ -96,7 +94,7 @@
             </display:column>
             <display:column title="Edit">
                <a href="${ctx}/admin/editSubCategory.htm?id=${subCategory.uuid}&catId=${subCategory.parentCategory.id}
-                  &prp=${prp}&orp=${orp}&sfrp=${sfrp}&sunrp=${sunrp}&ale=1"><i class="icon-pencil"></i></a>
+                  &prp=${prp}&orp=${orp}&sfrp=${sfrp}&sunrp=${sunrp}&ale=1"><i class="fa fa-edit"></i></a>
             </display:column>
             <display:column title="Add Topic">
                <a href="addTopic.htm?id=${subCategory.id}&catId=${subCategory.parentCategory.id}">Add</a>
@@ -104,7 +102,7 @@
             <display:column title="Delete">
                <a href="deleteSubCategory.htm?id=${subCategory.id}&CategoryId=${subCategory.parentCategory.id}&prp=${prp}&orp=${orp}&sfrp=${sfrp}&sunrp=${sunrp}&ale=1" 
                   onclick="return confirm('Warning: This deletes all of the data under this Sub Category (Topic, Sub Topic, Content)! Are you sure?')">
-               <i class="icon-remove"></i>
+           <i class="fa fa-trash"></i>
                </a>
             </display:column>
          </display:table>
