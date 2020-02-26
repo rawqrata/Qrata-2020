@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<taglib>
+	<tlibversion>1.0</tlibversion>
+	<jspversion>1.1</jspversion>
+	<shortname>breadcrumb</shortname>
+	<info>Tag lib for displaying the breadcrumbs</info>
+	<uri>http://insonix.com/qrata/jsp/taglib/breadcrumb</uri>
+	<tag>
+		<name>breadcrumb</name>
+		<tagclass>com.insonix.qrata.taglib.BreadCrumb</tagclass>
+		<info>display the breadcrumbs</info>
+		<attribute>
+			<name>type</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<name>serialId</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<name>separator</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+	</tag>
+</taglib> 

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+		"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+		"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory name="sessionFactory">
+		<property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
+		<property name="hibernate.connection.password">postgres</property>
+		<property name="hibernate.connection.url">jdbc:postgresql://localhost/db_qrata</property>
+		<property name="hibernate.connection.username">postgres</property>
+		<property name="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</property>
+       
+       <!-- 2nd level cache -->
+        <property name="hibernate.cache.provider_class">net.sf.ehcache.hibernate.SingletonEhCacheProvider</property>
+        <property name="hibernate.cache.use_query_cache">true</property>
+        <property name="hibernate.cache.use_second_level_cache">true</property>
+        <property name="hibernate.generate_statistics" >false</property>
+        
+        <mapping class="com.insonix.qrata.models.Category"></mapping>
+		<mapping class="com.insonix.qrata.models.RatingCriteria"></mapping>
+		<mapping class="com.insonix.qrata.models.RelatedTopics"></mapping>
+		<mapping class="com.insonix.qrata.models.Role"></mapping>
+		<mapping class="com.insonix.qrata.models.Site"></mapping>
+		<mapping class="com.insonix.qrata.models.SiteReview"></mapping>
+		<mapping class="com.insonix.qrata.models.SiteReviewRatingCriteria"></mapping>
+		<mapping class="com.insonix.qrata.models.SiteReviewComments"></mapping>
+		<mapping class="com.insonix.qrata.models.Topic"></mapping>
+		<mapping class="com.insonix.qrata.models.TopicExpertAssignment"></mapping>
+		<mapping class="com.insonix.qrata.models.TopicRatingCriteria"></mapping>
+		<mapping class="com.insonix.qrata.models.User"></mapping>
+		<mapping class="com.insonix.qrata.models.UserInfo"></mapping>
+		<mapping class="com.insonix.qrata.models.SiteReviewRatingCriteriaVoting"></mapping>
+		 
+    </session-factory>
+    
+    
+</hibernate-configuration>

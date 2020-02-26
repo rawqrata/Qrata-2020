@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- @author Ramandeep Singh @timestamp June 06 2010, 12:21 PM -->
+<b:beans xmlns:b="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns="http://www.springframework.org/schema/security"
+	xsi:schemaLocation="
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+		http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security-3.0.xsd"
+	default-autowire="byName">
+
+
+	<!-- Enable web security The <http> element is the parent for all web-related 
+		namespace functionality. The <intercept-url> element defines a pattern which 
+		is matched against the URLs of incoming requests using an ant path style 
+		syntax. The access attribute defines the access requirements for requests 
+		matching the given pattern. With the default configuration, this is typically 
+		a comma-separated list of roles, one of which a user must have to be allowed 
+		to make the request. The prefix “ROLE_” is a marker which indicates that 
+		a simple comparison with the user's authorities should be made. In other 
+		words, a normal role-based check should be used. Access-control in Spring 
+		Security is not limited to the use of simple roles (hence the use of the 
+		prefix to differentiate between different types of security attributes). 
+		You can use multiple <intercept-url> elements to define different access 
+		requirements for different sets of URLs, but they will be evaluated in the 
+		order listed and the first match will be used. So you must put the most specific 
+		matches at the top. You can also add a method attribute to limit the match 
+		to a particular HTTP method (GET, POST, PUT etc.). If a request matches multiple 
+		patterns, the method-specific match will take precedence regardless of ordering. 
+		Spring Security Ref PDF Page Number: 9 -->
+
+
+	<global-method-security pre-post-annotations="enabled" secured-annotations="enabled" />
+
+	<!-- Automatically receives AuthenticationEvent messages -->
+	<b:bean id="loggerListener"
+		class="org.springframework.security.authentication.event.LoggerListener" />
+
+</b:beans>
