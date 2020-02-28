@@ -14,20 +14,31 @@
 <title>Insert title here</title>
 </head>
 <body>
+<div class="row">
 	<c:choose>
 		<c:when test="${param.success eq '3' }">
 			<div class="success-box"><c:out value="Assignment has been done successfully" /></div>
 		</c:when>
 	</c:choose>
+	</div>
+	<div class="row">
+	<div class="col-md-12">
 				<div class="date-text">&nbsp;</div>
+				</div>
+				</div>
+				<div class="row">
+				<div class="col-md-8 col-8">
                  <ul class="shape-design">
                                 <li>Manage</li>
 								<li><img src="${ctx}/resources/images/breadcrumb-arrow.png" /></li>                                      	
                                 <li class="none">Expert BIO</li>
                         	</ul>
+                        	</div>
+                        	<div class="col-md-4 col-4">
                    <div class="back-button"><a href="javascript:;" onclick="javascript:historyButton()">&#60;&#60; Go Back </a></div>
-                	
-                    <div class="center-table">
+                   </div>
+                	</div>
+                    <div class="mediaBoxT">
 
 						<table class="mediaTable" style="background-color:#E7E7E4;">
 							<thead>
@@ -70,7 +81,7 @@
 					</c:choose>
 				</display:column>
 				<display:column title="View Content">
-					<a href='${ctx}/admin/findContentsByTopic.htm?id=${topic.id}'>View &#62;&#62;</a>
+					<a href='${ctx}/admin/findContentsByTopic.htm?id=${topic.id}'><i class="fa fa-eye"></i></a>
 				</display:column>
 			</display:table>
 							                        

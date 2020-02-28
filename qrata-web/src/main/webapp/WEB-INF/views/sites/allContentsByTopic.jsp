@@ -19,6 +19,8 @@
 	</script>
 </head>
 <body>
+<div class="row">
+<div class="col-md-12">
 	<c:choose>
 		<c:when test="${USERROLEID ne EXPERTID}">
 			<c:set var="url" value="findContentsByTopic" />
@@ -27,7 +29,15 @@
 			<c:set var="url" value="findAllContentsByTopic" />
 		</c:otherwise>
 	</c:choose>
+	</div>
+	</div>
+	<div class="row">
+	<div class="col-md-12">
 	<div class="date-text">&nbsp;</div>
+	</div>
+	</div>
+	<div class="row">
+	<div class="col-md-8 col-8">
 	<ul class="shape-design">
 		
 		<c:choose>
@@ -48,18 +58,34 @@
 		</c:choose>
 		
 	</ul>
-
+</div>
+<div class="col-md-4 col-4">
 	<div class="back-button"><a href="javascript:;" onclick="javascript:historyButton()">&#60;&#60; Go Back </a></div>
-	
-	<div class="center-table">		
+	</div>
+	</div>
+	<div class="alltopicbox">		
 		<form:form cssClass="form-search" commandName="siteForm" action="findAllContentsByTopic.htm?id=${topic.id}" autocomplete="off" method="post">
-			<div class="input-append">
-				<form:input path="siteSearchVal" cssClass="span2 search-query" placeholder="Enter content name"
+		<div class="row">
+		
+				            <div class="col-md-12">
+                  <div class=:form-group">
+                     <div class="input-group mb-1 serachinputbox">
+                     <form:input path="siteSearchVal" cssClass="span2 form-control search-query" placeholder="Enter content name"
 					id="reviewSearch" cssStyle="width: 310px;" />
-				<button type="submit" class="btn">
-					<i class="icon-search"></i>
-				</button>
-			</div>
+                        <div class="input-group-prepend">
+                           <span class="input-group-text">
+                           <button type="submit" class="btn">
+                           <i class="fa fa-search"></i>
+                           </button>
+                           </span>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+		
+		
+		</div>
+	
 		 </form:form>
 			 
 		<display:table id="siteReview" name="${siteReviewList}" pagesize="10" class="displayTable table table-striped table-hover table-bordered table-condensed" 

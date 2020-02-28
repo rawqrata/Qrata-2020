@@ -68,6 +68,7 @@
 			</a></span>
 		</div>
 		
+		<div class="table-responsive">
 		<display:table id="site" name="${sites}" pagesize="10" class="displayTable table table-striped table-hover table-bordered table-condensed"
 			style="margin-bottom:1%;margin-top:1%;" requestURI="listSites.htm" defaultsort="1" sort="external" defaultorder="descending" partialList="true" size="${totalSites}">
 			<display:column title="Content" sortable="true" sortName="s.name">
@@ -76,15 +77,16 @@
 				<p><b><a onclick="showAccordianAndActiveLink(0, 'domainsLink')" href="listDomains.htm">Root:</a></b>&#47;&#47;&nbsp;<b:breadcrumb serialId="${site.id}-${site.topicId}" separator=">>" type="SITE"/></p>
 			</display:column>
 			<display:column title="Edit">
-				<a href="${ctx}/admin/editSite.htm?id=${site.siteUuid}&prp=${prp}&orp=${orp}&sfrp=${sfrp}&sunrp=${sunrp}"><i class="icon-pencil"></i></a>
+				<a href="${ctx}/admin/editSite.htm?id=${site.siteUuid}&prp=${prp}&orp=${orp}&sfrp=${sfrp}&sunrp=${sunrp}"><i class="fa fa-edit"></i></a>
 			</display:column>
 			<display:column title="Delete">
 				<a href="${ctx}/admin/deleteSite.htm?id=${site.siteUuid}&prp=${prp}&orp=${orp}&sfrp=${sfrp}&sunrp=${sunrp}" 
 					onclick="return confirm('Warning: This deletes the content and its reviews permanently! Are you sure?')">
-					<i class="icon-remove"></i>
+					<i class="fa fa-trash"></i>
 				</a>
 			</display:column>
 		</display:table>
+		</div>
 
 	</div>
 	

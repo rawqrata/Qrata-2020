@@ -246,14 +246,18 @@ public class TopicForm {
 	}
 
 
-	/* (non-Javadoc)
-	 * @see java.lang.Object#toString()
-	 */
 	@Override
 	public String toString() {
-		return "TopicForm [uuid=" + uuid + ", name=" + name + ", subCatId="
-				+ subCatId + ", type=" + type + ", topicSearchVal="
-				+ topicSearchVal + ",reviewStatus=" + reviewStatus + ",status="+ status +"]";
+		return "TopicForm [topicId=" + topicId + ", uuid=" + uuid + ", name=" + name + ", categoryId=" + categoryId
+				+ ", subCatId=" + subCatId + ", parentTopicId=" + parentTopicId + ", type=" + type + ", topicSearchVal="
+				+ topicSearchVal + ", ratingStatus=" + ratingStatus + ", childStatus=" + childStatus + ", assignStatus="
+				+ assignStatus + ", expertId=" + expertId + ", applicableAssignment=" + applicableAssignment
+				+ ", existContent=" + existContent + ", editorName=" + editorName + ", leafNode=" + leafNode
+				+ ", expertFirstName=" + expertFirstName + ", expertLastName=" + expertLastName + ", status=" + status
+				+ ", reviewStatus=" + reviewStatus + ", count=" + count + ", sites=" + sites + "]";
 	}
+
+
+	
 
 }

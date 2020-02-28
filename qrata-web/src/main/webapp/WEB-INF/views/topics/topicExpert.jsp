@@ -109,7 +109,8 @@
 	</script>
 </head>
 <body>
-	
+	<div class="row">
+	<div class="col-md-12">
 	<c:choose>
 		<c:when test="${param.success eq '3' }">
 			<div class="success-box"><c:out value="Assignment has been done successfully" /></div>
@@ -118,12 +119,22 @@
 			<div class="success-box"><c:out value="DeAssignment has been done successfully" /></div>
 		</c:when>
 	</c:choose>
+	</div>
+	</div>
+	<div class="row">
 	<div id="message" class="success-box"></div>
+	</div>
+	<div class="row">
+	<div class="col-md-12">
 	<div class="date-text">&nbsp;</div>
+	</div>
+	</div>
+	<div class="row">
+	<div class="col-md-8 col-8">
 	<c:choose>
 		<c:when test="${not empty topic.parentTopic.id}">
 			<ul class="shape-design">
-				<li class="shape1">&nbsp;</li>
+			
 				<li>Sub-Topic Assign</li>
 				<li><img src="${ctx}/resources/images/breadcrumb-arrow.png" /></li>
 				<li>Expert</li>
@@ -131,26 +142,34 @@
 		</c:when>
 		<c:otherwise>
 			<ul class="shape-design">
-				<li class="shape1">&nbsp;</li>
+			
 				<li>Topic Assign</li>
 				<li><img src="${ctx}/resources/images/breadcrumb-arrow.png" /></li>
 				<li>Expert</li>
 			</ul>
 		</c:otherwise>
 	</c:choose>
+	</div>
+	<div class="col-md-4 col-4">
 	<div class="back-button">
 		<a href="javascript:;" onclick="javascript:historyButton()">&#60;&#60;
 			Go Back </a>
 	</div>
+	</div>
+	</div>
+	<div class="row">
+	<div class="col-md-12">
 	<c:choose>
 		<c:when test="${not empty topic.parentTopic.id}">
-			<div class="breadcrumb-style"><h5><a href="listDomains.htm">Root</a>://<b:breadcrumb separator="/" serialId="${topic.id}" type="ASSIGN" /></h5></div>
+			<h5><a href="listDomains.htm">Root</a>://<b:breadcrumb separator="/" serialId="${topic.id}" type="ASSIGN" /></h5>
 		</c:when>
 		<c:otherwise>
-			<div class="breadcrumb-style"><h5><a href="listDomains.htm">Root</a>://<b:breadcrumb separator="/" serialId="${topic.id}" type="ASSIGN" /></h5></div>
+			<h5><a href="listDomains.htm">Root</a>://<b:breadcrumb separator="/" serialId="${topic.id}" type="ASSIGN" /></h5>
 		</c:otherwise>
 	</c:choose>
-	<div class="center-table">
+	</div>
+	</div>
+	<div class="assignebox">
 		<form action="assignedExpert.htm" name="saveForm" id="saveForm">
 			<table width="100%"
 				class="table table-striped table-hover table-bordered table-condensed">
@@ -168,7 +187,7 @@
 							<div style="float: left;width: 100%;" id="availableDiv">
 								<div style="float: left;width: 100%">
 									<input type="text" name="searchAvailable" id="searchAvailable" autocomplete="off" placeholder="Search expert"
-									value="" onkeyup="searchAvailableExperts(this.value);" style="width: 97%;height: 1.5em;" />
+									value="" onkeyup="searchAvailableExperts(this.value);" class="form-control"  />
 								</div>
 								<select name="availableExpert" id="availableExpert"
 									multiple="multiple" style="width:100%; height: 300px;">

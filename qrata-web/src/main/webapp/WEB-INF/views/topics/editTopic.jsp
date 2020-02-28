@@ -130,12 +130,17 @@ $(document).ready(function() {
 </script>
 </head>
 <body>
+<div class="row">
+<div class="col-md-12">
 	<div class="date-text">&nbsp;</div>
-	
+	</div>
+	</div>
+	<div class="row">
+	<div class="col-md-8 col-8">
 		<ul class="shape-design">
 		<c:choose>
 	 <c:when test="${empty topicRef.parentTopic}">
-			<li class="shape1">&nbsp;</li>
+		
 			<li>Manage</li>
 			<li><img src="${ctx}/resources/images/breadcrumb-arrow.png" /></li>
 			<li>Topics</li>
@@ -143,7 +148,7 @@ $(document).ready(function() {
 			<li>Edit Topic</li>
 	</c:when>
 	<c:otherwise>
-			<li class="shape1">&nbsp;</li>
+			
 			<li>Manage</li>
 			<li><img src="${ctx}/resources/images/breadcrumb-arrow.png" /></li>
 			<li>SubTopics</li>
@@ -153,52 +158,65 @@ $(document).ready(function() {
 	</c:otherwise>
 			</c:choose>
 		</ul>
+		</div>
+		<div class="col-md-4 col-4">
+		
 		<div class="back-button"><a href="javascript:;" onclick="javascript:historyButton()">&#60;&#60;Go Back </a></div>
+		</div>
+		</div>
 		<c:choose>
 			<c:when test="${not empty topicRef.parentTopic}">
-				<div class="breadcrumb-style">
+			<div class="row">
+				<div class="col-md-12">
 					<input type="hidden" name="topicId" id="topicId" value="${topicRef.parentTopic.id}" />
 					<h5><a href="listDomains.htm">Root</a>://<b:breadcrumb separator="/" serialId="${id}" type="TOPIC" /></h5>
 				</div>
+				</div>
 			</c:when>
 			<c:otherwise>
-				<div class="breadcrumb-style"><h5><a onclick="showAccordianAndActiveLink(0, 'domainsLink')" href="listDomains.htm">Root</a>://<b:breadcrumb separator="/" serialId="${id}" type="CATEGORY" /></h5></div>
+			<div class="row">
+				<div class="col-md-12">
+				<h5><a onclick="showAccordianAndActiveLink(0, 'domainsLink')" href="listDomains.htm">Root</a>://<b:breadcrumb separator="/" serialId="${id}" type="CATEGORY" /></h5>
+				</div>
+				</div>
 			</c:otherwise>
 		</c:choose>
-	<div class="center-table">
-				<div class="bo-login-box">
-			<div class="login-heading-inner">Topic Info ID (auto assigned)</div>
-			<div class="site-infologin-section" style="width: 100%;">
-				<div class="defaul-login-form2">
+	      <div class="form-box mt-4">
+         <div class="login-heading-inner-form">Topic Info ID (auto assigned)
+         </div>
+						
 					<form:form action="editTopic.htm" commandName="topic" method="POST" id="editTopic" name="editTopic" >
-						<ul>
-							<li><label>Name:</label>
-								<div id="msgDiv" style="float:top;"></div>
-								<p>
+					<div class="row">
+						<div class="col-md-12">
+								<div id="msgDiv"></div>
+							<label>Name:</label>
+							<div class="form-group">
+						
+								
 									<form:input type="text" onblur="existsTopic(this.value);"
 									onfocus="if (this.value=='email') this.value='';"
-										class="input_border email" path="name" id="topicName"
+										class="input_border form-control email" path="name" id="topicName"
 										/> 
 										<form:input type="hidden" path="uuid" ></form:input>
 										<form:input type="hidden" path="subCatId" name="subCatId" id="subCatId" value="${subCatId}"  />
 										<form:input type="hidden" path="type" />
-								</p></li>
-
-							<li><div style="text-align: center;">
+							</div>
+							</div>
+							<div class="col-md-12 text-center">
 									<input type="button" name="btn" value="Save" id="btnLogin" >
 									<input type="button" name="btn" onclick="javascript:historyButton()" value="Cancel" id="btnLogin" >
-								</div></li>
-						</ul>
+								</div>
 						<input type="hidden" name ="prp" id ="prp" value="${prp}"/>
 						<input type="hidden" name ="orp" id ="orp" value="${orp}"/>
 						<input type="hidden" name ="sfrp" id ="sfrp" value="${sfrp}"/>
 						<input type="hidden" name="sunrp" id="sunrp" value="${sunrp}"> 
 						<input type="hidden" name="ale" id="ale" value="${ale}">
+						</div>
 					</form:form>
-				</div>
+			
 
-			</div>
-		</div>
+			
+		
 
 
 	</div>

@@ -45,14 +45,17 @@
 	<div class="breadcrumb-style"><h5>Root//<b:breadcrumb separator="/" serialId="${id}" type="CRITERIA" /></h5></div>
 	<div class="center-table">
 		<span>
-<%-- 			To add a new Criteria to this list, <a href="addCriteria.htm?id=${id}">click here..</a> --%>&nbsp;
+			To add a new Criteria to this list, <a href="addCriteria.htm?id=${id}">click here..</a> &nbsp;
 		</span>
+		
+		<div class="table-responsive">
 		<table width="100%"
-			class="table table-striped table-hover table-bordered table-condensed">
+			class="displayTable table table-striped table-hover table-bordered table-condensed">
 			<thead>
 				<tr>
 					<th width="30%" class="table-heading">Criteria Name</th>
 					<th width="10%" class="table-heading">Edit</th>
+					<th width="10%" class="table-heading">Delete</th>
 					<th width="10%" class="table-heading">Preview</th>
 
 				</tr>
@@ -64,14 +67,14 @@
 						<td>${criteria.name}</td>
 						<td class="yes"><a
 							href="${ctx}/admin/editCriteria.htm?id=${criteria.id}"><i
-								class="icon-pencil"></i></a></td>
-<!-- 						<td class="yes"><a -->
-<%-- 							href="deleteCriteria.htm?id=${criteria.id}&categoryId=${criteria.parentRatingCriteria.id}" --%>
-<!-- 							onclick="return confirm('Warning: This deletes the data from everywhere! are you sure ?')"><i -->
-<!-- 								class="icon-remove"></i></a></td> -->
+								class="fa fa-edit"></i></a></td>
+ 						<td class="yes"><a 
+ 							href="deleteCriteria.htm?id=${criteria.id}&categoryId=${criteria.parentRatingCriteria.id}" 
+ 							onclick="return confirm('Warning: This deletes the data from everywhere! are you sure ?')"><i
+ 								class="fa fa-trash"></i></a></td>
 						<td><a
 							href="${ctx}/admin/previewCriteriaCategory.htm?id=<c:out value='${criteria.id }'/>"><i
-								class="icon-eye-open"></i></a></td>
+								class="fa fa-eye"></i></a></td>
 
 
 					</tr>
@@ -80,6 +83,7 @@
 
 			</tbody>
 		</table>
+		</div>
 
 	</div>
 </body>

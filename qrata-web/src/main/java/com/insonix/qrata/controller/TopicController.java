@@ -477,7 +477,6 @@ public class TopicController {
 			sortFieldRequestParam = PaginationUtility.getSortFieldRequestParam(request, "topic", sortField);
 		}
 				
-		
 		model.addAttribute("topicList", topics);
 		model.addAttribute("topicForm", topicForm);
 		model.addAttribute("totalTopics", totalTopics);

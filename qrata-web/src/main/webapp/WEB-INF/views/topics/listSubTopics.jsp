@@ -19,6 +19,8 @@
 	</script>
 </head>
 <body>
+<div class="row">
+<div class="col-md-12">
 	<c:choose>
 		<c:when test="${param.success eq '1' }">
 			<div class="success-box"><c:out value="Sub Topic has been created successfully" /></div>
@@ -30,24 +32,51 @@
 			<div class="success-box"><c:out value="Data has been updated successfully" /></div>
 		</c:when>
 	</c:choose>
+	</div>
+	</div>
+	<div class="row">
+	<div class="col-md-12">
 	<div class="date-text">&nbsp;</div>
+	</div>
+	</div>
+	<div class="row">
+	<div class="col-md-8 col-8">
 	<ul class="shape-design">
 		<li>Manage</li>
 		<li><img src="${ctx}/resources/images/breadcrumb-arrow.png" /></li>
 		<li class="none">Sub-Topics</li>
 	</ul>
+	</div>
+	<div class="col-md-4 col-4">
 	<div class="back-button"><a href="javascript:;" onclick="javascript:historyButton()">&#60;&#60; Go Back </a></div>
-	<div class="breadcrumb-style"><h5><a href="listDomains.htm">Root</a>://<b:breadcrumb separator="/" serialId="${id}" type="TOPIC" /></h5></div>
+	</div>
+	</div>
+	<div class="row">
+	<div class="col-md-12"><h5><a href="listDomains.htm">Root</a>://<b:breadcrumb separator="/" serialId="${id}" type="TOPIC" /></h5></div>
+	</div>
 	
-	<div class="center-table">
+	<div class="topicbox">
 		<form:form cssClass="form-search" commandName="topicForm" action="listSubTopics.htm?id=${id}" autocomplete="off">
-			<div class="input-append">
-				<form:input path="topicSearchVal" cssClass="span2 search-query" placeholder="Enter sub topic name" 
+		
+		<div class="row">
+				            <div class="col-md-12">
+                  <div class=:form-group">
+                     <div class="input-group mb-1 serachinputbox">
+                      <form:input path="topicSearchVal" cssClass="span2 form-control search-query" placeholder="Enter sub topic name" 
 					id="subTopicSearch" cssStyle="width: 310px;" />
-				<button type="submit" class="btn">
-					<i class="icon-search"></i>
-				</button>
-			</div>
+                        <div class="input-group-prepend">
+                           <span class="input-group-text">
+                           <button type="submit" class="btn">
+                           <i class="fa fa-search"></i>
+                           </button>
+                           </span>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+		
+		</div>
+	
 		</form:form>
 		
 	<span>To add a new Sub Topics to this list, <a href="addSubTopic.htm?id=${id}&type=c">click here..</a></span>
@@ -83,12 +112,12 @@
 		
 		<display:column title="Edit">
 			<a href="${ctx}/admin/editSubTopic.htm?id=${topic.uuid}&subCatId=${id}
-				&prp=${prp}&orp=${orp}&sfrp=${sfrp}&sunrp=${sunrp}"><i class="icon-pencil"></i></a>
+				&prp=${prp}&orp=${orp}&sfrp=${sfrp}&sunrp=${sunrp}"><i class="fa fa-edit"></i></a>
 		</display:column>
 		<display:column title="Delete">
 			<a href="deleteSubTopics.htm?id=${topic.topicId}&topicId=${id}&prp=${prp}&orp=${orp}&sfrp=${sfrp}&sunrp=${sunrp}" 
 				onclick="return confirm('Warning: This deletes the data from everywhere! Are you sureThis deletes all of the data under this Sub Topic (Content)! Are you sure?')">
-				<i class="icon-remove"></i>
+				 <i class="fa fa-trash"></i>
 			</a>
 		</display:column>
 	</display:table>
