@@ -20,7 +20,7 @@ var domainID, categoryID, subCategoryID, topicID;
 $(document).ready(function() {
 	/* $('#optional').hide(); */
 	domainID = $('#domains option:selected').val();
-	$('#subTopic').hide();
+	//$('#subTopic').hide();
 	
 	$("#the_file").change(function() {
 		validateImage("the_file");
