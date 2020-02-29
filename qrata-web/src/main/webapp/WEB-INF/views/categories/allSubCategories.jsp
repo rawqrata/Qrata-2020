@@ -93,8 +93,7 @@
                </p>
             </display:column>
             <display:column title="Edit">
-               <a href="${ctx}/admin/editSubCategory.htm?id=${subCategory.uuid}&catId=${subCategory.parentCategory.id}
-                  &prp=${prp}&orp=${orp}&sfrp=${sfrp}&sunrp=${sunrp}&ale=1"><i class="fa fa-edit"></i></a>
+               <a href="${ctx}/admin/editSubCategory.htm?id=${subCategory.uuid}&catId=${subCategory.parentCategory.id}&prp=${prp}&orp=${orp}&sfrp=${sfrp}&sunrp=${sunrp}&ale=1"><i class="fa fa-edit"></i></a>
             </display:column>
             <display:column title="Add Topic">
                <a href="addTopic.htm?id=${subCategory.id}&catId=${subCategory.parentCategory.id}"><i class="fa fa-plus-square-o"></i></a>
