@@ -19,6 +19,8 @@
 	</script>
 </head>
 <body>
+<div class="row">
+<div class="col-md-12">
 	<c:choose>
 		<c:when test="${param.success eq '1' }">
 			<div class="success-box"><c:out value="Content has been created successfully" /></div>
@@ -42,30 +44,39 @@
 			<div class="error-box"><c:out value="You cannot rate the content unless the Sub-Topic concerned is rated. Please rate the Sub-Topic first." /></div>
 		</c:when>
 	</c:choose>
-    <div class="date-text">&nbsp;</div>
-	<ul class="shape-design">
-		<li>Manage</li>
-		<li><img src="${ctx}/resources/images/breadcrumb-arrow.png" /></li>
-		<li class="none">Content</li>
-	</ul>
-	<div class="back-button"  ><a href="javascript:;" onclick="javascript:historyButton()">&#60;&#60; Go Back </a></div>
-	<div class="center-table">
+	</div></div>
+	
+	
+    <div class="row"><div class="col-md-12"><div class="date-text">&nbsp;</div></div></div>
+	<div class="row">
+	        <div class="col-md-8 col-8">
+			<ul class="shape-design">
+				<li>Manage</li>
+				<li><img src="${ctx}/resources/images/breadcrumb-arrow.png" /></li>
+				<li class="none">Content</li>
+			</ul>
+			</div>
+			<div class="col-md-4 col-4">
+			<div class="back-button"><a href="javascript:;" onclick="javascript:historyButton()">&#60;&#60; Go Back </a></div>
+			</div>
+			</div>
+	
+	
+	
+	
+	<div class="row">
 		  <form:form cssClass="form-search" commandName="siteForm" action="listSites.htm" autocomplete="off">
-			<div class="input-append">
-				<form:input path="siteSearchVal" cssClass="span2 search-query" placeholder="Enter content name" 
+			<div class="col-md-6 col-6 form-group">
+				<form:input path="siteSearchVal" cssClass="span2 search-query form-control" placeholder="Enter content name" 
 					id="siteSearch" cssStyle="width: 310px;" />
 				<button type="submit" class="btn">
 					<i class="icon-search"></i>
 				</button>
 			</div>
 		 </form:form>
-    
-		<div
-			style="float: right; font-size: 12px; margin-left: 25px; margin-top: -22px; padding-top: 4px;">
-			<span><a id="create-user" href="${ctx }/admin/addSite.htm">Add
-					Content<img style="padding-left: 4px;"
-					src="${ctx }/resources/images/plus-sign.png">
-			</a></span>
+    	
+		<div class="col-md-6 col-6">
+			<span><a id="create-user" class="btn btn-info" href="${ctx }/admin/addSite.htm"><i class="fa fa-plus"></i>	Content	</a></span>
 		</div>
 		
 		<div class="table-responsive">
