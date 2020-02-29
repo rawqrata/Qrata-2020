@@ -88,8 +88,7 @@
                </p>
             </display:column>
             <display:column title="Edit">
-               <a href="${ctx}/admin/editCategory.htm?id=${category.uuid}&domainId=${category.parentCategory.id}
-                  &prp=${prp}&orp=${orp}&sfrp=${sfrp}&sunrp=${sunrp}&ale=1"><i class="fa fa-edit"></i></a>
+               <a href="${ctx}/admin/editCategory.htm?id=${category.uuid}&domainId=${category.parentCategory.id}&prp=${prp}&orp=${orp}&sfrp=${sfrp}&sunrp=${sunrp}&ale=1"><i class="fa fa-edit"></i></a>
             </display:column>
             <display:column title="Add Sub Category">
                <a href="addSubCategory.htm?id=${category.id}&domainId=${id}"><i class="fa fa-plus-square-o"></i></a>
