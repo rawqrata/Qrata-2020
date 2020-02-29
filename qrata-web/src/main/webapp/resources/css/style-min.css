@@ -337,7 +337,7 @@ span.forgot-password {
 }
 .measshetitle img
 {
-	height:15vh;
+	height: 25vh;
 }
 nav.navbar.navbar-expand-md.custom-navbar.navbar-dark {
   /*   background: linear-gradient(to bottom, #4b4b4d 0, #545456 100%); */
@@ -375,7 +375,7 @@ span.headtag {
 .heading-main {
     background: #fff;
     width: 100%;
-    height: 50vh;
+    height: 30vh;
     text-align: center;
     position: absolute;
     bottom: 0;
