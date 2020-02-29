@@ -18,7 +18,7 @@
 var domainID, categoryID, subCategoryID, topicID;
 
 $(document).ready(function() {
-	$('#optional').hide();
+	/* $('#optional').hide(); */
 	domainID = $('#domains option:selected').val();
 	$('#subTopic').hide();
 	
@@ -206,8 +206,8 @@ function validateAddSite() {
 		  		success: function(response) {
 		  			if(response.options.trim() != "") {
 		  				validate = true;
-		  				$('#subTopics').remove();
-		  				$('#dynamicSubTopic').prepend('<select class=\'input_border form-control\' id=\'subTopics\' name=\'subTopicId\'>');
+		  				//$('#subTopics').remove();
+		  				/* $('#dynamicSubTopic').prepend('<select class=\'input_border form-control\' id=\'subTopics\' name=\'subTopicId\'>'); */
 		  				$('#subTopics').empty().append(response.options);
 		  				$('#optional').show();
 		  				$('#subTopic').show();
@@ -216,12 +216,12 @@ function validateAddSite() {
 		  				checkTopicIsLeafNode(topicID);
 		  				if(leafNode){
 		  					validate = false;
-		  					$('#subTopics').remove();
-			  				$('#optional').hide();
+		  					//$('#subTopics').remove();
+			  				//$('#optional').hide();
 		  				}else{
 		  					validate = true;
-		  					$('#subTopics').remove();
-			  				$('#dynamicSubTopic').prepend('<select id=\'subTopics\' name=\'subTopicId\'>');
+		  					//$('#subTopics').remove();
+			  				/* $('#dynamicSubTopic').prepend('<select id=\'subTopics\' name=\'subTopicId\'>'); */
 			  				$('#subTopics').empty().append(response.options);
 			  				$('#optional').show();
 			  				$('#subTopic').show();
@@ -238,8 +238,8 @@ function validateAddSite() {
 	           }
 	  	  });  
 		}else{
-			$('#subTopics').remove();
-			$('#optional').hide();
+			//$('#subTopics').remove();
+			//$('#optional').hide();
 			alert("Please Select Valid Topic ");
 		}
 	}
@@ -516,7 +516,8 @@ function validateAddSite() {
                </div>
                <div class="col-md-6" id="optional">
                   <label>Sub Topic:</label>
-                  <div class="form-group" id="dynamicSubTopic">
+                  <div class="form-group" >
+                  <form:select path="subTopicId"  id="subTopics" class="input_border form-control"></form:select>
                   	<a id = "subTopic" href="javascript:;" onclick = "addSubTopic()" style="margin-left: 10px;font-size: 11px;"><i class="fa fa-plus-square-o"></i></a>
                     <span style="display: inline-block;margin-left: 8px;width: 50px;">
 						<span style="display: none;width: 35px;" id="spanSubTopic">
