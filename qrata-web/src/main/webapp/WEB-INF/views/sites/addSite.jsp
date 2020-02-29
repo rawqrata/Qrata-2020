@@ -207,7 +207,7 @@ function validateAddSite() {
 		  			if(response.options.trim() != "") {
 		  				validate = true;
 		  				$('#subTopics').remove();
-		  				$('#dynamicSubTopic').prepend('<select id=\'subTopics\' name=\'subTopicId\'>');
+		  				$('#dynamicSubTopic').prepend('<select class=\'input_border form-control\' id=\'subTopics\' name=\'subTopicId\'>');
 		  				$('#subTopics').empty().append(response.options);
 		  				$('#optional').show();
 		  				$('#subTopic').show();
@@ -406,113 +406,133 @@ function validateAddSite() {
 </Script>
 
 </head>
-<body>
-	<div class="date-text">&nbsp;</div>
-	
-	<ul class="shape-design">
-		<li class="shape1">&nbsp;</li>
-		<li>Manage</li>
-		<li><img src="${ctx}/resources/images/breadcrumb-arrow.png" /></li>
-		<li>Contents</li>
-		<li><img src="${ctx}/resources/images/breadcrumb-arrow.png" /></li>
-		<li>Add Contents</li>
-	</ul>
 
-	<div class="back-button"  ><a href="javascript:;" onclick="javascript:historyButton()">&#60;&#60; Go Back </a></div>
-	<div class="breadcrumb-style"><h5><a href="listDomains.htm">Root</a>://</h5></div>
-	<div class="center-table">
-		<div class="bo-login-box">
-			<div class="login-heading-inner">Content ID (auto
-				assigned)</div>
-			<div class="site-infologin-section">
-				<div class="defaul-login-form2">
-					<form:form commandName="siteForm" action="addSite.htm" enctype="multipart/form-data"
+	<body>
+      <div class="row">
+         <div class="col-md-12">
+            <div class="date-text">&nbsp;</div>
+         </div>
+      </div>
+      <div class="row">
+         <div class="col-md-8 col-8">
+            <ul class="shape-design">
+				<li class="shape1">&nbsp;</li>
+				<li>Manage</li>
+				<li><img src="${ctx}/resources/images/breadcrumb-arrow.png" /></li>
+				<li>Contents</li>
+				<li><img src="${ctx}/resources/images/breadcrumb-arrow.png" /></li>
+				<li>Add Contents</li>
+			</ul>
+         </div>
+         <div class="col-md-4 col-4">
+            <div class="back-button">
+               <a href="javascript:;" onclick="javascript:historyButton()">&#60;&#60;
+               Go Back </a>
+            </div>
+         </div>
+      </div>
+      <div class="row">
+         <div class="col-md-12">
+            <h5><a href="listDomains.htm">Root</a>://</h5>
+         </div>
+      </div>
+      <div class="form-box mt-4">
+         <div class="login-heading-inner-form">Content ID (auto	assigned)</div>
+        <form:form commandName="siteForm" action="addSite.htm" enctype="multipart/form-data"
 						method="post" class="form-wrapper" id="addSite" name="addSite">
-						<ul>
-							<li><label>Content Name:</label>
-								<p>
-									<form:input path="name" class="input_border email"  id="siteName" name="siteName"
-										value="" />
-								</p>
-							</li>
-							<li><label>URL:</label>
-								<p>
-									<form:input path="url" class="input_border email"  id="txtEmail" value="" />
-								</p>
-							</li>
-							<li style="margin: -16px 0px 0px 105px;">
-								<i style="font-size: 10px">(Enter full URL example: http://www.example.com/index.htm)</i>
-							</li>
-							<li><label>Logo:</label>
-								<p>
-									<form:input type="file" path="siteLogo" id="the_file" size="18" cssClass="upload-browse" />
-								</p>
-							</li>
-							
-							<li><label>Domain:</label>	
-								<p>
-									<form:select path="domainId" onchange="getCategoriesByDomainId();" id="domains">
-										<form:option value="0">Select Domain</form:option>		
-										<form:options items="${domains}" itemValue="id" itemLabel="name" />
-									</form:select>
-									<span style="display: inline-block;margin-left: 8px;width: 50px;">
-										<span style="display: none;width: 35px;" id="spanDomain">
-											<img src="${ctx}/resources/images/fancybox_loading.gif" alt="Loading..." style="width: 25px;" />
-										</span>
-									</span>
-									<a href="addDomain.htm" style="margin-left: 10px;font-size: 11px;">Add Domain&nbsp;&#62;&#62;</a>									
-								</p>
-							</li>
-							<li><label>Category:</label>	
-								<p>
-									<form:select  path="categoryId"  id="categories" onchange="getSubCategoriesByCategoryId()"></form:select>
-									<span style="display: inline-block;margin-left: 8px;width: 50px;">
-										<span style="display: none;width: 35px;" id="spanCategory">
-											<img src="${ctx}/resources/images/fancybox_loading.gif" alt="Loading..." style="width: 25px;" />
-										</span>
-									</span>
-									<a href="javascript:;" onclick = "addCategory()" style="margin-left: 10px;font-size: 11px;">Add Category&nbsp;&#62;&#62;</a>
-								</p>
-							</li>
-							<li><label>Sub Category:</label>	
-								<p>
-									<form:select path="subCategoryId"  id="subCategories" onchange="getTopicsBySubcategoryId()"></form:select>
-									<span style="display: inline-block;margin-left: 8px;width: 50px;">
-										<span style="display: none;width: 35px;" id="spanSubCategory">
-											<img src="${ctx}/resources/images/fancybox_loading.gif" alt="Loading..." style="width: 25px;" />
-										</span>
-									</span>
-									<a id = "subCategory" href="javascript:;" onclick = "addSubCategory()" style="margin-left: 10px;font-size: 11px;">Add Sub Category&nbsp;&#62;&#62;</a>
-								</p>
-							</li>
-							<li><label>Topic:</label>	
-								<p>
-									<form:select path="topicId"  id="topics" onchange="getSubTopicsByTopicId()"></form:select>
-									<span style="display: inline-block;margin-left: 8px;width: 50px;">
-										<span style="display: none;width: 35px;" id="spanTopic">
-											<img src="${ctx}/resources/images/fancybox_loading.gif" alt="Loading..." style="width: 25px;" />
-										</span>
-									</span>
-									<a id = "topic" href="javascript:;" onclick = "addTopic()" style="margin-left: 10px;font-size: 11px;">Add Topic&nbsp;&#62;&#62;</a>
-								</p>
-							</li>
-							<li id="optional"><label>Sub Topic:</label>	
-								<p id="dynamicSubTopic">
-									<span style="display: inline-block;margin-left: 8px;width: 50px;">
-										<span style="display: none;width: 35px;" id="spanSubTopic">
-											<img src="${ctx}/resources/images/fancybox_loading.gif" alt="Loading..." style="width: 25px;" />
-										</span>
-									</span>
-									<a id = "subTopic" href="javascript:;" onclick = "addSubTopic()" style="margin-left: 10px;font-size: 11px;">Add Sub Topic&nbsp;&#62;&#62;</a>
-								</p>
-							</li>
-							<li><input type="button" name="Add Content" value="Save" id="btnLogin" onclick="submitForm()"></li>
-						</ul>
-					</form:form>
-				</div>
-			</div>
-		</div>
-	</div>
-
-</body>
+            <div class="row">
+               <div class="col-md-6">
+                  <label>Content Name:</label>
+                  <div class="form-group">
+                    <form:input path="name" class="input_border form-control email" id="siteName" name="siteName" value="" />
+                  </div>
+               </div>
+               <div class="col-md-6">
+                  <label>URL:</label>
+                  <div class="form-group">
+                    <form:input path="url" class="input_border form-control email"  id="txtEmail" value="" />
+                    <i style="font-size: 10px">(Enter full URL example: http://www.example.com/index.htm)</i>
+                  </div>
+                  
+               </div>
+               <div class="col-md-6">
+                  <div id="msgDiv" style="float: left;"></div>
+                  <label>Logo:</label>
+                  <div class="form-group">
+                    <form:input type="file" path="siteLogo" id="the_file" size="18" cssClass="upload-browse input_border form-control" />
+                  </div>
+               </div>
+               <div class="col-md-6">
+                  <label>Domain:</label>
+                  <div class="form-group">
+                    <form:select path="domainId" onchange="getCategoriesByDomainId();" id="domains" class="input_border form-control">
+						<form:option value="0">Select Domain</form:option>		
+						<form:options items="${domains}" itemValue="id" itemLabel="name" />
+					</form:select>
+					<a href="addDomain.htm" style="margin-left: 10px;font-size: 11px;"><i class="fa fa-plus-square-o"></i></a>
+					<span style="display: inline-block;margin-left: 8px;width: 50px;">
+						<span style="display: none;width: 35px;" id="spanDomain">
+							<img src="${ctx}/resources/images/fancybox_loading.gif" alt="Loading..." style="width: 25px;" />
+						</span>
+					</span>
+                  </div>
+               </div>
+               <div class="col-md-6">
+                  <label>Category:</label>
+                  <div class="form-group">
+                    <form:select  path="categoryId"  id="categories" onchange="getSubCategoriesByCategoryId()" class="input_border form-control"></form:select>
+					<a href="javascript:;" onclick = "addCategory()" style="margin-left: 10px;font-size: 11px;"><i class="fa fa-plus-square-o"></i></a>
+					<span style="display: inline-block;margin-left: 8px;width: 50px;">
+						<span style="display: none;width: 35px;" id="spanCategory">
+							<img src="${ctx}/resources/images/fancybox_loading.gif" alt="Loading..." style="width: 25px;" />
+						</span>
+					</span>
+                  </div>
+               </div>
+               <div class="col-md-6">
+                  <div id="msg1Div" style="float: left;"></div>
+                  <label>Sub Category:</label>
+                  <div class="form-group">
+                    <form:select path="subCategoryId"  id="subCategories" onchange="getTopicsBySubcategoryId()" class="input_border form-control"></form:select>
+					<a id = "subCategory" href="javascript:;" onclick = "addSubCategory()" style="margin-left: 10px;font-size: 11px;"><i class="fa fa-plus-square-o"></i></a>
+					<span style="display: inline-block;margin-left: 8px;width: 50px;">
+						<span style="display: none;width: 35px;" id="spanSubCategory">
+							<img src="${ctx}/resources/images/fancybox_loading.gif" alt="Loading..." style="width: 25px;" />
+						</span>
+					</span>
+                  </div>
+               </div>
+               <div class="col-md-6">
+                  <label>Topic:</label>
+                  <div class="form-group">
+                    <form:select path="topicId"  id="topics" onchange="getSubTopicsByTopicId()" class="input_border form-control"></form:select>
+					<a id = "topic" href="javascript:;" onclick = "addTopic()" style="margin-left: 10px;font-size: 11px;"><i class="fa fa-plus-square-o"></i></a>
+					<span style="display: inline-block;margin-left: 8px;width: 50px;">
+						<span style="display: none;width: 35px;" id="spanTopic">
+							<img src="${ctx}/resources/images/fancybox_loading.gif" alt="Loading..." style="width: 25px;" />
+						</span>
+					</span>
+                  </div>
+               </div>
+               <div class="col-md-6" id="optional">
+                  <label>Sub Topic:</label>
+                  <div class="form-group" id="dynamicSubTopic">
+                  	<a id = "subTopic" href="javascript:;" onclick = "addSubTopic()" style="margin-left: 10px;font-size: 11px;"><i class="fa fa-plus-square-o"></i></a>
+                    <span style="display: inline-block;margin-left: 8px;width: 50px;">
+						<span style="display: none;width: 35px;" id="spanSubTopic">
+							<img src="${ctx}/resources/images/fancybox_loading.gif" alt="Loading..." style="width: 25px;" />
+						</span>
+					</span>
+                  </div>
+               </div>
+         	</div>
+         	<div class="row">
+         		<div class="col-md-12 text-center">
+            		<input type="button" name="Add Content" value="Save" id="btnLogin" onclick="submitForm()">
+         		</div>
+      		</div>
+         </form:form>
+      </div>
+   </body>
+   
 </html>
