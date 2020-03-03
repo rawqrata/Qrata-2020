@@ -22,6 +22,7 @@
 	</script>
 </head>
 <body>
+
 	<c:choose>
 		<c:when test="${param.success eq '1' }">
 			<div class="success-box"><c:out value="Topic has been created successfully" /></div>

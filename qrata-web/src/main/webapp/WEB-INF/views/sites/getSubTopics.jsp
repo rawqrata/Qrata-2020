@@ -19,8 +19,13 @@
 	</script>
 </head>
 <body>
+<div class="row">
+<div class="col-md-12">
 	<div class="date-text">&nbsp;</div>
-	
+	</div>
+	</div>
+	<div class="row">
+	<div class="col-md-8 col-8">
 	<ul class="shape-design">
 		<li>Ratings</li>
 		<li><img src="${ctx}/resources/images/breadcrumb-arrow.png" /></li>
@@ -28,17 +33,35 @@
 		<li><img src="${ctx}/resources/images/breadcrumb-arrow.png" /></li>
 		<li>Sub Topics</li>
 	</ul>
+	</div>
+	<div class="col-md-4 col-4">
 	<div class="back-button"  ><a href="javascript:;" onclick="javascript:historyButton()">&#60;&#60; Go Back </a></div>
-	<div class="center-table">
+	</div>
+	</div>
+	
+	<div class="topicbox">
 	
 		<form:form cssClass="form-search" commandName="topicForm" action="getSubTopics.htm" autocomplete="off">
-			<div class="input-append">
-				<form:input path="topicSearchVal" cssClass="span2 search-query" placeholder="Enter sub topic name"
+		
+		
+					                <div class="row">
+			               <div class="col-md-12">
+                  <div class=:form-group">
+                     <div class="input-group mb-2 serachinputbox">
+                    	<form:input path="topicSearchVal" cssClass="span2 form-control search-query" placeholder="Enter sub topic name"
 					id="subTopicSearch" cssStyle="width: 310px;" />
-				<button type="submit" class="btn">
-					<i class="icon-search"></i>
-				</button>
-			</div>
+                        <div class="input-group-prepend">
+                           <span class="input-group-text">
+                           <button type="submit" class="btn">
+                           <i class="fa fa-search"></i>
+                           </button>
+                           </span>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               </div>
+
 		</form:form>
 		
 		<display:table id="subTopic" name="${topicList}" pagesize="10" class="displayTable table table-striped table-hover table-bordered table-condensed"

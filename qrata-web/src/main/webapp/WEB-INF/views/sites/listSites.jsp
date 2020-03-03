@@ -64,20 +64,32 @@
 	
 	
 	
-	<div class="row">
+
 		  <form:form cssClass="form-search" commandName="siteForm" action="listSites.htm" autocomplete="off">
-			<div class="col-md-6 col-6 form-group">
-				<form:input path="siteSearchVal" cssClass="span2 search-query form-control" placeholder="Enter content name" 
+		  
+		  	<div class="row">
+		               <div class="col-md-9 col-9">
+                  <div class=:form-group">
+                     <div class="input-group mb-2 serachinputbox">
+                      <form:input path="siteSearchVal" cssClass="span2 search-query form-control" placeholder="Enter content name" 
 					id="siteSearch" cssStyle="width: 310px;" />
-				<button type="submit" class="btn">
-					<i class="icon-search"></i>
-				</button>
+                        <div class="input-group-prepend">
+                           <span class="input-group-text">
+                           <button type="submit" class="btn">
+                           <i class="fa fa-search"></i>
+                           </button>
+                           </span>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+				<div class="col-md-3 col-3 text-right">
+			<span><a id="create-user" class="btn btn-info" href="${ctx }/admin/addSite.htm"><i class="fa fa-plus"></i>	Content	</a></span>
+		</div>
 			</div>
 		 </form:form>
     	
-		<div class="col-md-6 col-6">
-			<span><a id="create-user" class="btn btn-info" href="${ctx }/admin/addSite.htm"><i class="fa fa-plus"></i>	Content	</a></span>
-		</div>
+		
 		
 		<div class="table-responsive">
 		<display:table id="site" name="${sites}" pagesize="10" class="displayTable table table-striped table-hover table-bordered table-condensed"
@@ -99,7 +111,7 @@
 		</display:table>
 		</div>
 
-	</div>
+	
 	
 </body>
 </html>

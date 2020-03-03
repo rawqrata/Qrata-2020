@@ -416,7 +416,7 @@ function validateAddSite() {
       <div class="row">
          <div class="col-md-8 col-8">
             <ul class="shape-design">
-				<li class="shape1">&nbsp;</li>
+			
 				<li>Manage</li>
 				<li><img src="${ctx}/resources/images/breadcrumb-arrow.png" /></li>
 				<li>Contents</li>

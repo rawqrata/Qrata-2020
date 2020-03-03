@@ -163,6 +163,8 @@ function validateEditCriteria() {
 
 </head>
 <body>
+<div class="row">
+<div class="col-md-12">
 	<c:choose>
 		<c:when test="${param.success eq '1' }">
 			<div class="success-box"><c:out value="Criteria has been created successfully" /></div>
@@ -174,25 +176,38 @@ function validateEditCriteria() {
 			<div class="success-box"><c:out value="Data has been updated successfully" /></div>
 		</c:when>
 	</c:choose>
-<div class="center-table">
+	</div>
+	</div>
+<div class="row">
+<div class="col-md-12">
 	<div class="date-text">&nbsp;</div>
+	</div>
+	</div>
+	<div class="row">
+	<div class="col-md-8 col-8">
 	<ul class="shape-design">
-		<li class="shape1">&nbsp;</li>
-		<li>Criteria Mgmt</li>
+				<li>Criteria Mgmt</li>
 		<li><img src="${ctx}/resources/images/breadcrumb-arrow.png" /></li>
 		<li>Criteria Group</li>
 		<li><img src="${ctx}/resources/images/breadcrumb-arrow.png" /></li>
 		<li>Edit Criteria</li>
 	</ul>
+	</div>
+	<div class="col-md-4 col-4">
 	<div class="back-button"  ><a href="javascript:;" onclick="javascript:historyButton()">&#60;&#60; Go Back </a></div>
-	<div class="breadcrumb-style"><h5>Root//<b:breadcrumb separator="/" serialId="${id}" type="CRITERIA" /></h5></div>
-		<div class="bo-login-box">
-			<div class="login-heading-inner">Criteria Info ID (auto
-				assigned)</div>
-			<div class="site-infologin-section" style="width: 100%;">
-				<div class="defaul-login-form2">
+	</div>
+	</div>
+	<div class="row">
+	<div class="col-md-12"><h5>Root//<b:breadcrumb separator="/" serialId="${id}" type="CRITERIA" /></h5></div>
+	</div>
+	      <div class="form-box mt-4">
+         <div class="login-heading-inner-form">Criteria Info ID (auto
+				assigned)
+         </div>
+					
+			
 				<form:form action="editCriteria.htm" commandName="criteria"  enctype="multipart/form-data" method="POST" id="editCriteria" name="editCriteria" >
-						<ul>
+					
 <!-- 						<li><label>Ordering:</label> -->
 <!-- 					<div id="msgDiv1" style="float:top;"></div> -->
 <!-- 					<p> -->
@@ -200,21 +215,25 @@ function validateEditCriteria() {
 <%-- 									class="input_border email"  name="priority" id="priority" value="${criteriaForm.priority}" /> --%>
 										
 <!-- 									</p></li> -->
-								<b><li><label>Name:</label></b>
-								<div id="msgDiv" style="float: left;" ></div>
-								<p>
+<div class="row">
+<div class="col-md-12">
+<div id="msgDiv" ></div>
+							<label>Name:</label>
+							<div class="form-group">
+								
+								
 									<form:input type="text" onblur="existsCriteria(this.value.toLowerCase(),'${criteria.id}');"
-										class="input_border email" path="name" id="ratingCriteria" readonly="true"/> 
+										class="input_border form-control email" path="name" id="ratingCriteria" readonly="true"/> 
 										<form:input type="hidden" path="id" ></form:input>
 										<input type="hidden" name="criteriaId" id="criteriaId" value="${criteria.id}" />
 										<input type="hidden" name="parentId" id="parentId" value="${criteria.parentRatingCriteria.id}"/>
-								</p></li></ul>
-										<tr>
-					<b><th colspan="2" class="essential persist">Description:</th></b>
-				</tr>
-								<tbody>
-				<tr bgcolor="#F0F3F2">
-					<td width="50%" valign="top">
+										</div>
+								</div>
+					<div class="col-md-12">					
+				<label>	Description:</label>
+			
+							<div class="form-group">
+				
 							<%-- <div class="photo-box">
                           	<span class="pict-box">
                           	 <img src="${ctx}/resources/images/photo.png" alt=""  />
@@ -224,22 +243,23 @@ function validateEditCriteria() {
                               </div> --%>
 							<textarea class="ckeditor" cols="10" id="description"
 								name="description" rows="10">${criteriaForm.description}</textarea>
-						<input type="hidden" name="textareaVal" id="textareaVal" value="" />			
-					</td>
-				</tr>
-			</tbody>
+						<input type="hidden" name="textareaVal" id="textareaVal" value="" />	
+						</div>			
+			</div>
 		
-			<div style="text-align: left;">	
+			<div class="col-md-12 text-center">	
 				<input  type="button" name="btn" value="save" id="btnLogin" onclick="validateEditCriteria();"></div>
+				
+				</div>
 					</form:form>
 
-				</div>
+			
 
-			</div>
+			
 		</div>
 
 
-	</div>
+	
 
 
 </body>
