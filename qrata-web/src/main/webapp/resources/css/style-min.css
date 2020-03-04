@@ -501,7 +501,7 @@ color: #fff;
     display: inline-block;
     font-size: 14px;
         text-decoration: none;
-        width: 93px;
+        min-width: 93px;
 }
 .home-menu {
     /* background: #000; */
@@ -2107,7 +2107,7 @@ textarea {
 	font-size: 12px;
 	margin-bottom: 12px;
 	padding: 7px 7px 0;
-	width: 733px;
+	width: 100%;
 }
 @media(max-width:768px)
 {

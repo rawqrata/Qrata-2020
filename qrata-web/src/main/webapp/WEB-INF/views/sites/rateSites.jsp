@@ -24,6 +24,8 @@
 	</script>
 </head>
 <body>
+<div class="row">
+<div class="col-md-12">
 	<c:choose>
 		<c:when test="${param.success eq '1' }">
 			<div class="success-box"><c:out value="Content has been created successfully" /></div>
@@ -47,7 +49,15 @@
 			<div class="error-box"><c:out value="You cannot rate the content unless the Sub-Topic concerned is rated. Please rate the Sub-Topic first." /></div>
 		</c:when>
 	</c:choose>
+	</div>
+	</div>
+	<div class="row">
+	<div class="col-md-12">
 <div class="date-text">&nbsp;</div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-8 col-8">
 	<ul class="shape-design">
 		<c:choose>
 			<c:when test="${role eq 3 or USERROLEID eq EXPERTID}">
@@ -64,35 +74,62 @@
 			</c:when>
 		</c:choose>
 	</ul>
-	
-	<div class="back-button"><a href="javascript:;" onclick="javascript:historyButton()">&#60;&#60; Go Back </a></div>
-	<div class="center-table">
-		  <form:form cssClass="form-search" commandName="siteForm" action="${url}" autocomplete="off">
-			<div class="input-append">
-				<form:input path="siteSearchVal" cssClass="span2 search-query" placeholder="Enter content name" 
+	</div>
+	<div class="col-md-4 col-4">
+		<div class="back-button"><a href="javascript:;" onclick="javascript:historyButton()">&#60;&#60; Go Back </a></div>
+	</div>
+	</div>
+
+	<div class="sitebox">
+	 	        <div class="row">
+               <div class="col-md-9">
+               <form:form cssClass="form-search" commandName="siteForm" action="${url}" autocomplete="off">
+                  <div class="form-group">
+                     <div class="input-group mb-2 serachinputbox">
+                        <form:input path="siteSearchVal" cssClass="span2 form-control search-query" placeholder="Enter content name" 
 					id="siteSearch" cssStyle="width: 310px;" />
-				<button type="submit" class="btn">
-					<i class="icon-search"></i>
-				</button>
-			</div>
-		 </form:form>
-    
-    	<c:choose>
+                        <div class="input-group-prepend">
+                           <span class="input-group-text">
+                           <button type="submit" class="btn">
+                           <i class="fa fa-search"></i>
+                           </button>
+                           </span>
+                        </div>
+                     </div>
+                  </div>
+                   </form:form>
+               </div>
+               <div class="col-md-3 col-3 text-right">
+               		    	<c:choose>
     		<c:when test="${USERROLEID ne EXPERTID}">
-    			<div style="float: right; font-size: 12px; margin-left: 25px; margin-top: -22px; padding-top: 4px;">
-					<span><a id="create-user" href="${ctx }/admin/addSite.htm">AddContent<img style="padding-left: 4px;"
-							src="${ctx}/resources/images/plus-sign.png"></a>
+    			
+					<span><a id="create-user" href="${ctx }/admin/addSite.htm"><i class="fa fa-plus" aria-hidden="true"></i> Add Content</a>
 					</span>
-				</div>
+				
     		</c:when>
     		<c:otherwise>
-    			<div style="float: right; font-size: 12px; margin-left: 25px; margin-top: -22px; padding-top: 4px;">
-					<span><a id="create-user" href="${ctx }/admin/addContent_Expert.htm">Add Content<img style="padding-left: 4px;"
-						src="${ctx}/resources/images/plus-sign.png"></a>
+    			
+					<span><a id="create-user" href="${ctx }/admin/addContent_Expert.htm"><i class="fa fa-plus" aria-hidden="true"></i> Add Content</a>
 					</span>
-				</div>
+				
     		</c:otherwise>
     	</c:choose>
+               </div>
+            </div>
+	
+		
+		
+                  
+                  
+		
+				
+			
+                  
+            
+
+		
+    
+
     			
 		<display:table id="site" name="${sites}" pagesize="10" class="displayTable table table-striped table-hover table-bordered table-condensed"
 			style="margin-bottom:1%;margin-top:1%;" defaultsort="1" sort="external" defaultorder="descending" requestURI="getContents.htm" partialList="true" size="${totalSites}">

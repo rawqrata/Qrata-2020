@@ -27,6 +27,8 @@
 </script>
 </head>
 <body>
+<div class="row">
+<div class="col-md-12">
 	<c:choose>
 		<c:when test="${param.success eq '1' }">
 			<div class="success-box"><c:out value="Ratings has been made successfully" /></div>
@@ -35,10 +37,18 @@
 			<div class="success-box"><c:out value="" /></div>
 		</c:when>
 	</c:choose>
+	</div>
+	</div>
+	<div class="row">
+	<div class="col-md-12">
 	<div class="date-text">&nbsp;</div>
+	</div>
+	</div>
+	
+	<div class="row">
+	<div class="col-md-8 col-8">
 	<ul class="shape-design">
-		<li class="shape1">&nbsp;</li>
-		<c:choose>
+				<c:choose>
 			<c:when test="${USERROLEID eq EXPERTID}">
 				<li>My Rating Data</li>
 				<li><img src="${ctx}/resources/images/breadcrumb-arrow.png" /></li>
@@ -56,11 +66,16 @@
 		</c:choose>
 		
 	</ul>
+	</div>
+	<div class="col-md-4 col-4">
 	<div class="back-button">
 		<a href="javascript:;" onclick="javascript:historyButton()">&#60;&#60;
 			Go Back </a>
 	</div>
-	<div class="breadcrumb-style">
+	</div>
+	</div>
+	<div class="row">
+	<div class="col-md-12">
 		<c:choose>
 			<c:when test="${USERROLEID ne EXPERTID }">
 				<h5><a href="listDomains.htm">Root</a>://<b:breadcrumb separator="/" serialId="${topic.category.id}" type="CATEGORY" /></h5>
@@ -70,16 +85,19 @@
 			</c:otherwise>
 		</c:choose>
 	</div>
-	<div class="rating-information" style="float: left">
+	</div>
+	<div class="row no-gutters" >
+	<div class="col-md-12 rating-information">
 		<ul>
 			<li style="display:block">Topic Criteria importance is a number indicating how important a specific criterion in rating contents your topic(s)</li>
 			<li style="margin-left:15px">1 (one) means a specific criterion is <u>not important</u> to content rated in your topic(s).</li>
 			<li style="margin-left:15px">10 (ten) means a specific criterion is <u>extremely important</u> to content rated in your topic(s)</li>
 			
 		</ul>
+		</div>
 	</div>
 	
-	<div class="center-table">
+	<div class="criteriabox">
 		<form action="saveTopicCriteriaRatings.htm" method="post">
 			<table width="100%">
 				<tr>
