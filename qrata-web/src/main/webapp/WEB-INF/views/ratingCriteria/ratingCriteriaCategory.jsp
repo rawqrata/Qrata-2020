@@ -10,7 +10,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+<div class="row">
+<div class="col-md-12">
 	<c:choose>
 		<c:when test="${param.success eq '1' }">
 			<div class="success-box">
@@ -28,21 +29,31 @@
 			</div>
 		</c:when>
 	</c:choose>
+	</div>
+	</div>
+	<div class="row">
+	<div class="col-md-12">
 	<div class="date-text">&nbsp;</div>
-
-	
+	</div>
+</div>
+	<div class="row">
+	<div class="col-md-8 col-8">
 		<ul class="shape-design">
-			<li class="shape1">&nbsp;</li>
-			<li>Criteria Mgmt</li>
+		<li>Criteria Mgmt</li>
 			<li><img src="${ctx}/resources/images/breadcrumb-arrow.png" /></li>
 			<li>Criteria Group</li>
 		</ul>
+		</div>
+		<div class="col-md-4 col-4">
+		<div class="back-button"><a href="javascript:;" onclick="javascript:historyButton()">&#60;&#60; Go Back </a></div>
+		</div>
 
-	<div class="back-button"><a href="javascript:;" onclick="javascript:historyButton()">&#60;&#60; Go Back </a></div>
-	<div class="breadcrumb-style"><h5>Root//</h5></div>
-	
-	<div class="center-table">
-
+</div>
+	<div class="row">
+	<div class="col-md-12"><h5>Root//</h5></div>
+	</div>
+	<div class="row">
+  <div class="col-md-12">
 		<%-- <form:form cssClass="form-search" commandName="ratingCriteriaForm"
 			action="searchCriteriaCategory.htm" autocomplete="off">
 			<div class="input-append">
@@ -91,7 +102,7 @@
 			</tbody>
 		</table>
 		</div>
-
+</div>
 	</div>
 </body>
 </html>

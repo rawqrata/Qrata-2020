@@ -91,6 +91,8 @@ function existsCriteriaCategories(val) {
 </script>
 </head>
 <body>
+<div class="row">
+<div class="col-md-12">
 	<c:choose>
 		<c:when test="${param.success eq '1' }">
 			<div class="success-box">
@@ -108,50 +110,61 @@ function existsCriteriaCategories(val) {
 			</div>
 		</c:when>
 	</c:choose>
+	</div>
+	</div>
+	<div class="row">
+	<div class="col-md-12">
 	<div class="date-text">&nbsp;</div>
+	</div>
+	</div>
+	<div class="row">
+	<div class="col-md-8 col-8">
 	<ul class="shape-design">
-		<li class="shape1">&nbsp;</li>
 		<li>Criteria Mgmt</li>
 		<li><img src="${ctx}/resources/images/breadcrumb-arrow.png" /></li>
 		<li>Criteria Group</li>
 		<li><img src="${ctx}/resources/images/breadcrumb-arrow.png" /></li>
 		<li>Edit Criteria Group</li>
 	</ul>
-	<div class="back-button">
+	</div>
+	<div class="col-md-4 col-4 text-right">
+		<div class="back-button">
 		<a href="javascript:;" onclick="javascript:historyButton()">&#60;&#60;
 			Go Back </a>
 	</div>
-	<div class="breadcrumb-style"><h5>Root//</h5></div>
-	<div class="center-table">
-		<div class="bo-login-box">
-			<div class="login-heading-inner">Criteria Info ID (auto
-				assigned)</div>
-			<div class="site-infologin-section" style="width: 100%;">
-				<div class="defaul-login-form2">
+	</div>
+	</div>
+<div class="row">
+	<div class="col-md-12"><h5>Root//</h5></div>
+	</div>
+	      <div class="form-box mt-4">
+         <div class="login-heading-inner-form">Criteria Info ID (auto
+				assigned)
+         </div>
+		
+				
 				<form:form action="editCriteriaCategory.htm"  commandName="criteria" enctype="multipart/form-data" method="POST" id="editCriteriaCategory" name="editCriteriaCategory"  >
-						<ul>
-							
-							<li><label>Name:</label>
-							<div id="msgDiv" style="float: left;"></div>
-							<p>
+					<div class="row">
+						<div class="col-md-12">
+							<div id="msgDiv"></div>
+						<label>Name:</label>
+						<div class="form-group">
+											
 									<form:input type="text" onblur="existsCriteriaCategories(this.value.toLowerCase());"
 										onfocus="if (this.value=='email') this.value='';"
-										class="input_border email" id="criteria" name="cirteria" path="name"
+										class="input_border form-control email" id="criteria" name="cirteria" path="name"
 										/> 
 										<form:input type="hidden" path="id" ></form:input>
-								</p></li></ul>
-		
-			<div style="text-align: left;">	
+										</div>
+							</div>
+			<div class="col-md-12 text-center">	
 				<input type="button" name="btn" value="Save" id="btnLogin"></div>
+				</div>	
 					</form:form>
 
-				</div>
-
-			</div>
-		</div>
-
-
-	</div>
+				
+	
+	
 
 
 </body>

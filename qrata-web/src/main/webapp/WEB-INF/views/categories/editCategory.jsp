@@ -112,77 +112,59 @@ function existsCategory(val) {
 
 </head>
 <body>
-<div class="row">
-<div class="col-md-12">
-	<div class="date-text">&nbsp;</div>
-	</div>
+	<div class="row">
+		<div class="col-md-12">
+			<div class="date-text">&nbsp;</div>
+		</div>
 	</div>
 	<div class="row">
-	<div class="col-md-8 col-8">
-	<ul class="shape-design">
+		<div class="col-md-8 col-8">
+			<ul class="shape-design">
 				<li>Manage</li>
-		<li><img src="${ctx}/resources/images/breadcrumb-arrow.png" /></li>
-		<li>Categories</li>
-		<li><img src="${ctx}/resources/images/breadcrumb-arrow.png" /></li>
-		<li>Edit Category</li>
-	</ul>
-	</div>
-	<div class="col-md-4 col-4">
-	<div class="back-button">
-		<a href="javascript:;" onclick="javascript:historyButton()">&#60;&#60;
-			Go Back </a>
-	</div>
-	</div>
+				<li><img src="${ctx}/resources/images/breadcrumb-arrow.png" /></li>
+				<li>Categories</li>
+				<li><img src="${ctx}/resources/images/breadcrumb-arrow.png" /></li>
+				<li>Edit Category</li>
+			</ul>
+		</div>
+		<div class="col-md-4 col-4">
+			<div class="back-button">
+				<a href="javascript:;" onclick="javascript:historyButton()">&#60;&#60;Go Back </a>
+			</div>
+		</div>
 	</div>
 	<div class="row">
-	<div class="col-md-12">
-<h5><a onclick="showAccordianAndActiveLink(0, 'domainsLink')" href="listDomains.htm">Root</a>://<b:breadcrumb separator="/" serialId="${domainId}" type="CATEGORY" /></h5> 
-</div>
-</div>
+		<div class="col-md-12">
+			<h5><a onclick="showAccordianAndActiveLink(0, 'domainsLink')" href="listDomains.htm">Root</a>://<b:breadcrumb separator="/" serialId="${domainId}" type="CATEGORY" /></h5> 
+		</div>
+	</div>
 		<div class="form-box mt-4">
-					<div class="login-heading-inner-form">Category Info ID (auto assigned)</div>
-		
-		
-			
-				
-				<form action="editCategory.htm" name="editCategory" id="editCategory" method="post" >
-			<div class="row">
-			<div class="col-md-12">
-				<div id="msgDiv"></div>
-					
+			<div class="login-heading-inner-form">Category Info ID (auto assigned)</div>
+			<form action="editCategory.htm" name="editCategory" id="editCategory" method="post" >
+				<div class="row">
+					<div class="col-md-12">
+						<div id="msgDiv"></div>
 						<label>Name:</label>
 						<div class="form-group">
-					
-							
-								<input type="text" onblur="existsCategory(this.value);" name="name"  value="${category}"
-								onfocus="if (this.value=='email') this.value='';"
-								class="input_border form-control email" id="name"
-								/>
-									<input type="hidden" value="${categoryId }" name="categoryId"  id="categoryId"/>
-									<input type="hidden" name="domainId" id="domainId" value="${domainId}"/>
+							<input type="text" onblur="existsCategory(this.value);" name="name"  value="${category}"
+							onfocus="if (this.value=='email') this.value='';"
+							class="input_border form-control email" id="name"
+							/>
+							<input type="hidden" value="${categoryId }" name="categoryId"  id="categoryId"/>
+							<input type="hidden" name="domainId" id="domainId" value="${domainId}"/>
 						</div>
-							</div>
-						<div class="col-md-12 text-center">
-								<input type="button" name="btn" value="Save" id="btnLogin" >
-								<input type="button" name="btn" onclick="javascript:historyButton()" value="Cancel" id="btnLogin" >
-							</div>
-
-
-						
-						<input type="hidden" name ="prp" id ="prp" value="${prp}"/>
-						<input type="hidden" name ="orp" id ="orp" value="${orp}"/>
-						<input type="hidden" name ="sfrp" id ="sfrp" value="${sfrp}"/>
-						<input type="hidden" name="sunrp" id="sunrp" value="${sunrp}"> 
-						<input type="hidden" name="ale" id="ale" value="${ale}">
-						</div>
-					</form>
-
-			
-
-			
-		
-
-
-	</div>
-</body>
+					</div>
+					<div class="col-md-12 text-center">
+						<input type="button" name="btn" value="Save" id="btnLogin" >
+						<input type="button" name="btn" onclick="javascript:historyButton()" value="Cancel" id="btnLogin" >
+					</div>
+					<input type="hidden" name ="prp" id ="prp" value="${prp}"/>
+					<input type="hidden" name ="orp" id ="orp" value="${orp}"/>
+					<input type="hidden" name ="sfrp" id ="sfrp" value="${sfrp}"/>
+					<input type="hidden" name="sunrp" id="sunrp" value="${sunrp}"> 
+					<input type="hidden" name="ale" id="ale" value="${ale}">
+				</div>
+			</form>
+		</div>
+	</body>
 </html>

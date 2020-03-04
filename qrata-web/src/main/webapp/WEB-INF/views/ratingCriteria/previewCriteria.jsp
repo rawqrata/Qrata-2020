@@ -12,20 +12,32 @@
 <title>Insert title here</title>
 </head>
 <body>
+<div class="row">
+<div class="col-md-12">
 	<div class="date-text">&nbsp;</div>
+	</div>
+	</div>
+	<div class="row">
+	<div class="col-md-8 col-8">
 	<ul class="shape-design">
-		<li class="shape1">&nbsp;</li>
 		<li>Criteria Mgmt</li>
 		<li><img src="${ctx}/resources/images/breadcrumb-arrow.png" /></li>
 		<li>Criteria Group</li>
 		<li><img src="${ctx}/resources/images/breadcrumb-arrow.png" /></li>
 		<li>Criteria List</li>
 	</ul>
+	</div>
+	<div class="col-md-4 col-4">
 	<div class="back-button"><a href="javascript:;" onclick="javascript:historyButton()">&#60;&#60;Go Back </a></div>
-	<div class="breadcrumb-style"><h5>Root//<b:breadcrumb separator="/" serialId="${id}" type="CRITERIA" /></h5></div>
+	</div>
+	</div>
+	<div class="row">
+	<div class="col-md-12"><h5>Root//<b:breadcrumb separator="/" serialId="${id}" type="CRITERIA" /></h5></div>
 	
-		
-		<div class="center-table">
+		</div>
+		<div class="row">
+		<div class="col-md-12">
+		<div class="table-responsive">
 			<table width="100%"	class="table table-striped table-hover table-bordered table-condensed">			
 			<thead>
 				<tr>
@@ -47,6 +59,8 @@
 			 </tr>
 			</tbody>
 		</table>      
+        </div>
+        </div>
         </div>
 </body>
 </html>

@@ -88,6 +88,8 @@ function existsCriteriaCategories(val) {
 </script>
 </head>
 <body>
+<div class="row">
+<div class="col-md-12">
 	<c:choose>
 		<c:when test="${param.success eq '1' }">
 			<div class="success-box"><c:out value="Criteria Category has been created successfully" /></div>
@@ -99,52 +101,68 @@ function existsCriteriaCategories(val) {
 			<div class="success-box"><c:out value="Data has been updated successfully" /></div>
 		</c:when>
 	</c:choose>
-	<div class="center-table">
+	</div>
+	</div>
+<div class="row">
+<div class="col-md-12">
 	<div class="date-text">&nbsp;</div>
+	</div>
+	</div>
+	<div class="row">
+	<div class="col-md-8 col-8">
 	<ul class="shape-design">
-		<li class="shape1">&nbsp;</li>
 		<li>Criteria Mgmt</li>
 		<li><img src="${ctx}/resources/images/breadcrumb-arrow.png" /></li>
 		<li>Criteria Group</li>
 		<li><img src="${ctx}/resources/images/breadcrumb-arrow.png" /></li>
 		<li>Add Criteria Group</li>
 	</ul>
+	</div>
+	<div class="col-md-4 col-4">
 	<div class="back-button"  ><a href="javascript:;" onclick="javascript:historyButton()">&#60;&#60; Go Back </a></div>
-	<div class="breadcrumb-style"><h5>Root//</h5></div>
-		<div class="bo-login-box">
-			<div class="login-heading-inner">Criteria Info ID (auto
-				assigned)</div>
-			<div class="site-infologin-section" style="width: 100%;">
-				<div class="defaul-login-form2">
-				<div id="addDomainError"
-				style="display: none; float: left; width: 370px; height: 30px; padding: 8px 10px 8px 24px;"
-				class="error-none">You must fill in the field.</div>
+	</div>
+	</div>
+	<div class="row">
+	<div class="col-md-12"><h5>Root//</h5></div>
+	</div>
+			      <div class="form-box mt-4">
+         <div class="login-heading-inner-form">Criteria Info ID (auto
+				assigned)
+         </div>
+		
+			<div class="row">
+				<div class="col-md-12">
+				<div id="addDomainError"class="error-none">You must fill in the field.</div>
+				</div>
+				</div>
 				<form action="saveCriteriaCategory.htm" method="post" id="addCriteriaCategories" name="addCriteriaCategories"  >
-					<ul>
-						<li><label>Name:</label>
-							<div id="msgDiv" style="float: left;"></div>
-							<p>
+				<div class="row">
+				<div class="col-md-12">
+				<div id="msgDiv"></div>
+						<label>Name:</label>
+						<div class="form-group">
+							
+						
 								<input type="text" onblur="existsCriteriaCategories(this.value);"
 									onfocus="if (this.value=='email') this.value='';"
-									class="input_border email" name="criteriaCategory" id="criteria"
+									class="input_border form-control email" name="criteriaCategory" id="criteria"
 									value=""/>
 									<input type="hidden" name="criteria" id = "id" value="${id}"/>
-							</p></li>
-							
-			               <li><div style="text-align: center;">
+					</div>
+							</div>
+			               <div class="col-md-12 text-center">
 								<input type="button" name="btn" value="Save" id="btnLogin"  />
-							</div></li>
-							</ul>
-
+							</div>
+							
+</div>
 
 						</form>
-				</div>
+			
+</div>
+		
+		
 
-			</div>
-		</div>
 
-
-	</div>
 
 </body>
 </html>

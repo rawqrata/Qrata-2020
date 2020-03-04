@@ -179,6 +179,8 @@ function existsCriteriaForSubmit(val) {
 </head>
 
 <body>
+<div class="row">
+<div class="col-md-12">
 	<c:choose>
 		<c:when test="${param.success eq '1' }">
 			<div class="success-box">
@@ -196,57 +198,74 @@ function existsCriteriaForSubmit(val) {
 			</div>
 		</c:when>
 	</c:choose>
-	<div class="center-table">
+	</div>
+	</div>
+<div class="row">
+<div class="col-md-12">
 		<div class="date-text">&nbsp;</div>
+		</div>
+		</div>
+		<div class="row">
+		<div class="col-md-8 col-8">
 		<ul class="shape-design">
-			<li class="shape1">&nbsp;</li>
-			<li>Criteria Mgmt</li>
+					<li>Criteria Mgmt</li>
 			<li><img src="${ctx}/resources/images/breadcrumb-arrow.png" /></li>
 			<li>Criteria Group</li>
 			<li><img src="${ctx}/resources/images/breadcrumb-arrow.png" /></li>
 			<li>Add Criteria</li>
 		</ul>
+		</div>
+		<div class="col-md-4 col-4">
 		<div class="back-button"><a href="javascript:;" onclick="javascript:historyButton()">&#60;&#60;Go Back </a></div>
-		<div class="breadcrumb-style"><h5>Root//<b:breadcrumb separator="/" serialId="${id}" type="CRITERIA" /></h5></div>
-		<div class="bo-login-box">
-			<div class="login-heading-inner">Criteria Info ID (auto
-				assigned)</div>
-			<div class="site-infologin-section" style="width: 100%;">
-				<div class="defaul-login-form2">
-					<div id="addDomainError"
-						style="display: none; float: left; width: 370px; height: 30px; padding: 8px 10px 8px 24px;"
-						class="error-none">You must fill in the field.</div>
+		</div>
+		</div>
+		<div class="row">
+		<div class="col-md-12"><h5>Root//<b:breadcrumb separator="/" serialId="${id}" type="CRITERIA" /></h5></div>
+		</div>
+		      <div class="form-box mt-4">
+         <div class="login-heading-inner-form">Criteria Info ID (auto
+				assigned)
+         </div>
+			<div class="row">
+			<div class="col-md-12">
+					<div id="addDomainError" class="error-none">You must fill in the field.</div>
+					</div>
+					</div>
 					<form:form action="saveCriteria.htm" method="post" id="addCriteria" name="addCriteria">
-						<ul>
-							<li><label>Ordering:</label>
-								<div id="msgDiv1" style="float: top;"></div>
-								<p>
+					<div class="row">
+					<div class="col-md-6">
+					<div id="msgDiv1"></div>
+							<label>Ordering:</label>
+							<div class="form-group">
+								
+								
 									<input type="text" onblur="existsPriority(this.value);"
 										onfocus="if (this.value=='email') this.value='';"
-										class="input_border email" name="priority" id="priority"
+										class="input_border form-control email" name="priority" id="priority"
 										value="" />
+</div>
+								</div>
 
-								</p></li>
-
-
-							<li><label>Name:</label>
-								<div id="msgDiv" style="float: left;"></div>
-								<p>
+<div class="col-md-6">
+<div id="msgDiv"></div>
+							<label>Name:</label>
+							<div class="form-group">
+								
+								
 									<input type="text" onblur="existsCriteria(this.value);"
 										onfocus="if (this.value=='email') this.value='';"
-										class="input_border email" name="ratingCriteriaName"
+										class="input_border form-control email" name="ratingCriteriaName"
 										id="ratingCriteriaName" value="" /> <input type="hidden"
 										name="id" id="id" value="${id}" />
+										</div>
+</div>
 
-								</p></li>
-						</ul>
 
-						<tr>
-							<th colspan="2" class="essential persist" style="font-weight:bold;">Description:</th>
-						</tr>
-						<tbody>
-							<tr bgcolor="#F0F3F2">
-								<td width="50%" valign="top"><p>
+					<div class="col-md-12">
+						<label>Description:</label>	
+						
+						
+					
 										<%-- <div class="photo-box">
 =======
 				<div id="addDomainError"
@@ -291,6 +310,7 @@ function existsCriteriaForSubmit(val) {
                                   <span class="close-button"><a href="javascript:;"><i class="icon-remove"></i></a></span>
                                   <span class="upload-image"><input type="file" name="the_file" id="the_file" size="18"></span>
                               </div> --%>
+                              <div class="form-group">
 										<textarea class="ckeditor" cols="10" id="description"
 											name="description" rows="10"></textarea>
 
@@ -298,18 +318,23 @@ function existsCriteriaForSubmit(val) {
 											value="" /></td>
 
 
-							</tr>
-						</tbody>
-						<input type="button" name="btn" value="Save" id="btnLogin"
+						
+						
+							</div>
+							</div>
+							<div class="col-md-12 text-center">
+							
+							<input type="button" name="btn" value="Save" id="btnLogin"
 							onclick="validateAddCriteria();" />
-
+							</div>
+</div>
 					</form:form>
-				</div>
+			
 
-			</div>
+		
 		</div>
 
 
-	</div>
+	
 </body>
 </html>
