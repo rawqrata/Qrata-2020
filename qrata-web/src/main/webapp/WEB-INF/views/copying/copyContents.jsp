@@ -347,7 +347,8 @@
 	</script>
 </head>
 <body>
-	
+	<div class="row">
+	<div class="col-md-12">
 	<c:choose>
 		<c:when test="${param.success eq '3' }">
 			<div class="success-box"><c:out value="Assignment has been done successfully" /></div>
@@ -356,24 +357,41 @@
 			<div class="success-box"><c:out value="DeAssignment has been done successfully" /></div>
 		</c:when>
 	</c:choose>
+	</div>
+	</div>
+	<div class="row">
+	<div class="col-md-12">
 	<div id="message" class="success-box"></div>
+	</div>
+	</div>
+	<div class="row">
+	<div class="col-md-12">
 	<div class="date-text">&nbsp;</div>
+	</div>
+	</div>
+	<div class="row">
+	<div class="col-md-8 col-8">
 	<ul class="shape-design">
 		<li>Copying</li>
 		<li><img src="${ctx}/resources/images/breadcrumb-arrow.png" /></li>
 		<li>Copy Content</li>
 	</ul>
-	
-	<div class="back-button">
+	</div>
+	<div class="col-md-4 col-4">
+		<div class="back-button">
 		<a href="javascript:;" onclick="javascript:historyButton()">&#60;&#60;
 			Go Back </a>
 	</div>
+	
+	</div>
+	</div>
+
 	<c:choose>
 		<c:when test="${not empty topic.parentTopic.id}">
 			<div class="breadcrumb-style"><h5><a href="listDomains.htm">Root</a>://</h5></div>
 		</c:when>
 	</c:choose>
-	<div class="center-table">
+	<div class="copycontentbox">
 		<form:form action="copyContents.htm" name="copyContents" id="copyContents" commandName="copyContentForm" method="POST">
 		<table width="100%"
 				class="table table-striped table-hover table-bordered table-condensed">
@@ -388,14 +406,14 @@
 					<tr>
 						<td>
 							<label style="font-weight: bold;">Domain&#58;</label>
-							<form:select path="domainIdSrc" onchange="getCategoriesByDomainId(this.value, this.id)" id="domainSrc">
+							<form:select path="domainIdSrc" onchange="getCategoriesByDomainId(this.value, this.id)" id="domainSrc" class="form-control">
 								<form:option value="0">Select Domain</form:option>
 								<form:options items="${domains}" itemValue="id" itemLabel="name" />
 							</form:select>
 						</td>
 						<td>
 							<label style="font-weight: bold;">Domain&#58;</label>
-							<form:select path="domainIdDest" onchange="getCategoriesByDomainId(this.value, this.id)" id="domainDest">
+							<form:select path="domainIdDest" onchange="getCategoriesByDomainId(this.value, this.id)" id="domainDest" class="form-control">
 								<form:option value="0">Select Domain</form:option>
 								<form:options items="${domains}" itemValue="id" itemLabel="name" />
 							</form:select>
@@ -404,33 +422,33 @@
 					<tr>
 						<td>
 							<label style="font-weight: bold;">Category&#58;</label>
-							<form:select  path="categoryIdSrc"  id="categorySrc" onchange="getSubCategoriesByCategoryId(this.value, this.id)"></form:select>
+							<form:select  path="categoryIdSrc"  id="categorySrc" onchange="getSubCategoriesByCategoryId(this.value, this.id)" class="form-control"></form:select>
 						</td>
 						<td>
 							<label style="font-weight: bold;">Category&#58;</label>
-							<form:select  path="categoryIdDest"  id="categoryDest" onchange="getSubCategoriesByCategoryId(this.value, this.id)"></form:select>
+							<form:select  path="categoryIdDest"  id="categoryDest" onchange="getSubCategoriesByCategoryId(this.value, this.id)" class="form-control"></form:select>
 						</td>
 					</tr>
 					
 					<tr>
 						<td>
 							<label style="font-weight: bold;">Sub Category&#58;</label>
-							<form:select path="subCategoryIdSrc"  id="subCategorySrc" onchange="getAllTopicsBySubCategoryId(this.value, this.id)"></form:select>
+							<form:select path="subCategoryIdSrc"  id="subCategorySrc" onchange="getAllTopicsBySubCategoryId(this.value, this.id)" class="form-control"></form:select>
 						</td>
 						<td>
 							<label style="font-weight: bold;">Sub Category&#58;</label>
-							<form:select path="subCategoryIdDest"  id="subCategoryDest" onchange="getAllTopicsBySubCategoryId(this.value, this.id)"></form:select>
+							<form:select path="subCategoryIdDest"  id="subCategoryDest" onchange="getAllTopicsBySubCategoryId(this.value, this.id)" class="form-control"></form:select>
 						</td>
 					</tr>
 					
 					<tr>
 						<td>
 							<label style="font-weight: bold;">Topic&#58;</label>
-							<form:select path="topicIdSrc"  id="topicSrc" onchange="getSubTopicsOrContentsByTopicId(this.value, this.id)"></form:select>
+							<form:select path="topicIdSrc"  id="topicSrc" onchange="getSubTopicsOrContentsByTopicId(this.value, this.id)" class="form-control"></form:select>
 						</td>
 						<td>
 							<label style="font-weight: bold;">Topic&#58;</label>
-							<form:select path="topicIdDest"  id="topicDest" onchange="getSubTopicsOrContentsByTopicId(this.value, this.id)"></form:select>
+							<form:select path="topicIdDest"  id="topicDest" onchange="getSubTopicsOrContentsByTopicId(this.value, this.id)" class="form-control"></form:select>
 						</td>
 					</tr>
 					

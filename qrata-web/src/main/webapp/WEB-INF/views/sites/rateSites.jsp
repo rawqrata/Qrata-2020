@@ -194,11 +194,11 @@
 				<c:choose>
 					<c:when test="${USERROLEID eq EXPERTID }">
 						<c:if test="${site.status eq 'NEW' or site.status eq 'IN PROGRESS' or site.status eq 'REWORK'}">
-							<a href="${ctx}/admin/editSite.htm?id=${site.siteUuid}&prp=${prp}&orp=${orp}&sfrp=${sfrp}&sunrp=${sunrp}"><i class="icon-pencil"></i></a>
+							<a href="${ctx}/admin/editSite.htm?id=${site.siteUuid}&prp=${prp}&orp=${orp}&sfrp=${sfrp}&sunrp=${sunrp}"><i class="fa fa-edit"></i></a>
 						</c:if>
 					</c:when>
 					<c:otherwise>
-						<a href="${ctx}/admin/editSite.htm?id=${site.siteUuid}&prp=${prp}&orp=${orp}&sfrp=${sfrp}&sunrp=${sunrp}"><i class="icon-pencil"></i></a>
+						<a href="${ctx}/admin/editSite.htm?id=${site.siteUuid}&prp=${prp}&orp=${orp}&sfrp=${sfrp}&sunrp=${sunrp}"><i class="fa fa-edit"></i></a>
 					</c:otherwise>
 				</c:choose>
 			</display:column>
@@ -209,14 +209,14 @@
 						<c:if test="${site.status eq 'NEW' or site.status eq 'IN PROGRESS' or site.status eq 'REWORK'}">
 								<a href="${ctx}/admin/deleteSite.htm?id=${site.siteUuid}&prp=${prp}&orp=${orp}&sfrp=${sfrp}&sunrp=${sunrp}&gcd=y" 
 									onclick="return confirm('Warning: This deletes the content and its reviews permanently! Are you sure?')">
-									<i class="icon-remove"></i>
+									<i class="fa fa-trash"></i>
 								</a>
 						</c:if>
 					</c:when>
 					<c:otherwise>
 						<a href="${ctx}/admin/deleteSite.htm?id=${site.siteUuid}&prp=${prp}&orp=${orp}&sfrp=${sfrp}&sunrp=${sunrp}&gcd=y" 
 							onclick="return confirm('Warning: This deletes the content and its reviews permanently! Are you sure?')">
-							<i class="icon-remove"></i>
+							<i class="fa fa-trash"></i>
 						</a>
 					</c:otherwise>
 				</c:choose>

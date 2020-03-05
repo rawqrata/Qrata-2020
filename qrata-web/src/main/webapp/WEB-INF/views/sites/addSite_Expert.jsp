@@ -128,67 +128,79 @@
 
 </head>
 <body>
+<div class="row">
+<div class="col-md-8 col-8">
 	<ul class="shape-design">
 		<li class="shape1">&nbsp;</li>
 		<li>My Rating Data</li>
 		<li><img src="${ctx}/resources/images/breadcrumb-arrow.png" /></li>
 		<li>Add Content</li>
 	</ul>
-
+	</div>
+	<div class="col-md-4 col-4">
+	
 	<div class="back-button"  ><a href="javascript:;" onclick="javascript:historyButton()">&#60;&#60; Go Back </a></div>
+	</div>
+</div>
+	<div class="row">
 	<c:choose>
 		<c:when test="${not empty topic.parentTopic.id }">
-			<div class="breadcrumb-style"><h5>Root://<b:breadcrumb separator="/" serialId="${topic.parentTopic.id}" type="TOPIC" />/${topic.name}</h5></div>
+			<div class="col-md-12"><h5>Root://<b:breadcrumb separator="/" serialId="${topic.parentTopic.id}" type="TOPIC" />/${topic.name}</h5></div>
 		</c:when>
 		<c:otherwise>
-			<div class="breadcrumb-style"><h5>Root://<b:breadcrumb separator="/" serialId="${topic.category.id}" type="CATEGORY" />/${topic.name}</h5></div>
+			<div class="col-md-12"><h5>Root://<b:breadcrumb separator="/" serialId="${topic.category.id}" type="CATEGORY" />/${topic.name}</h5></div>
 		</c:otherwise>
 	</c:choose>
-	<div class="center-table">
-		<div class="bo-login-box">
-			<div class="login-heading-inner">Content ID (auto
-				assigned)</div>
-			<div class="site-infologin-section">
-				<div class="defaul-login-form2">
+	</div>
+	<div class="expertbox">
+	  <div class="form-box mt-4">
+         <div class="login-heading-inner-form">Content ID (auto assigned)</div>
+		
+			
+				
 					<form:form commandName="siteForm" action="addSite.htm" enctype="multipart/form-data"
 						method="post" class="form-wrapper" id="addSite" name="addSite">
-						<ul>
-							<li><label>Content Name:</label>
-								<p>
-									<form:input path="name" class="input_border email"  id="siteName" name="siteName" value="" />
-								</p>
-							</li>								
-							<li><label>URL:</label>
-								<p>
-									<form:input path="url" class="input_border email"  id="txtEmail" value="" />
-								 </p>
-							</li>
-							<li style="margin: -16px 0px 0px 105px;">
-								<i style="font-size: 10px">(Enter full URL example: http://www.example.com/index.htm)</i>
-							</li>
+					<div class="row">
+					<div class="col-md-6">
+							<label>Content Name:</label>
+							<div class="form-group">
+									<form:input path="name" class="input_border form-control email"  id="siteName" name="siteName" value="" />
+									</div>
+									</div>	
+									<div class="col-md-6">				
+							<label>URL:</label>
+							<div class="form-group">
+									<form:input path="url" class="input_border form-control email"  id="txtEmail" value="" />
+									<i style="font-size: 10px">(Enter full URL example: http://www.example.com/index.htm)</i>
+									</div>
+							</div>
+				
 							
 							<c:if test="${flag eq 1}">
-								<li><label>Logo:</label>
-									<p>
-										<form:input type="file" path="siteLogo" id="the_file" size="18" cssClass="upload-browse" />
-									</p>
-								</li>
+							<div class="col-md-6">
+								<label>Logo:</label>
+									<div class="form-group">
+										<form:input type="file" class="form-control" path="siteLogo" id="the_file" size="18" cssClass="upload-browse" />
+										</div>
+									</div>
+								
 							</c:if>
 								
 								<form:hidden path="categoryId"  id="category"/>
 								<form:hidden path="topicId"  id="topic"/>
-								
-							<li><input type="button" name="Add Content" value="Save" id="btnLogin" onclick="submitForm()"></li>
-							
+								<div class="col-md-12 text-center">
+							<input type="button"  name="Add Content" value="Save" id="btnLogin" onclick="submitForm()">
+							</div>
 						</ul>
 						<input type="hidden" name ="prp" id ="prp" value="${prp}"/>
 						<input type="hidden" name ="orp" id ="orp" value="${orp}"/>
 						<input type="hidden" name ="sfrp" id ="sfrp" value="${sfrp}"/>
 						<input type="hidden" name="sunrp" id="sunrp" value="${sunrp}"> 
+						</div>
 			</form:form>
-				</div>
+				
 
-			</div>
+		
 		</div>
 
 

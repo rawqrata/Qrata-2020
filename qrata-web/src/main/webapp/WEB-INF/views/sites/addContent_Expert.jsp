@@ -337,44 +337,49 @@ function validateAddSite() {
 
 </head>
 <body>
-	
+	<div class="row">
+	<div class="col-md-8 col-8">
 	<ul class="shape-design">
-		<li class="shape1">&nbsp;</li>
 		<li>My Publishing Data</li>
 		<li><img src="${ctx}/resources/images/breadcrumb-arrow.png" /></li>
 		<li>Contents</li>
 		<li><img src="${ctx}/resources/images/breadcrumb-arrow.png" /></li>
 		<li>Add Contents</li>
 	</ul>
-
+	</div>
+	<div class="col-md-4 col-4">
 	<div class="back-button"  ><a href="javascript:;" onclick="javascript:historyButton()">&#60;&#60; Go Back </a></div>
-	<div class="breadcrumb-style"><h5>Root://</h5></div>
-	<div class="center-table">
-		<div class="bo-login-box">
-			<div class="login-heading-inner">Content ID (auto
-				assigned)</div>
-			<div class="site-infologin-section">
-				<div class="defaul-login-form2">
+		</div>
+</div>
+<div class="row">
+	
+	<div class="col-md-12"><h5>Root://</h5></div>
+	</div>
+  <div class="form-box mt-4">
+         <div class="login-heading-inner-form">Content ID (auto assigned)</div>
+		
 					<form:form commandName="siteForm" action="addSite.htm" method="post" 
 						class="form-wrapper" id="addSite" name="addSite">
-						<ul>
-							<li><label>Content Name:</label>
-								<p>
-									<form:input path="name" class="input_border email"  id="siteName" name="siteName" value="" />
-								</p>
-							</li>
-							<li><label>URL:</label>
-								<p>
-									<form:input path="url" class="input_border email"  id="txtEmail" value="" />
-								</p>
-							</li>
-							<li style="margin: -16px 0px 0px 105px;">
-								<i style="font-size: 10px">(Enter full URL example: http://www.example.com/index.htm)</i>
-							</li>
+						<div class="row">
+						<div class="col-md-6">
+						<label>Content Name:</label>
+							<div class="form-group">
+									<form:input path="name" class="input_border email form-control"  id="siteName" name="siteName" value="" />
+								</div>
+							</div>
+							<div class="col-md-6">
+							<label>URL:</label>
+								<div class="form-group">
+									<form:input path="url" class="input_border email form-control"   id="txtEmail" value="" />
+									<i style="font-size: 10px">(Enter full URL example: http://www.example.com/index.htm)</i>
+									</div>
+							</div>
 							
-							<li><label>Domain:</label>	
-								<p>
-									<form:select path="domainId" onchange="getCategoriesByDomainId();" id="domains">
+						
+								<div class="col-md-6">
+							<label>Domain:</label>	
+								<div class="form-group">
+									<form:select path="domainId" onchange="getCategoriesByDomainId();" id="domains" class="form-control">
 										<form:option value="0">Select Domain</form:option>		
 										<form:options items="${domains}" itemValue="id" itemLabel="name" />							
 									</form:select>
@@ -383,54 +388,62 @@ function validateAddSite() {
 											<img src="${ctx}/resources/images/fancybox_loading.gif" alt="Loading..." style="width: 25px;" />
 										</span>
 									</span>
-								</p>
-							</li>
-							<li><label>Category:</label>	
-								<p>
-									<form:select  path="categoryId"  id="categories" onchange="getSubCategoriesByCategoryId()"></form:select>
+									</div>
+									</div>
+							<div class="col-md-6">
+							<label>Category:</label>	
+								<div class=:form-group">
+									<form:select  path="categoryId"  id="categories" onchange="getSubCategoriesByCategoryId()" class="form-control"></form:select>
 									<span style="display: inline-block;margin-left: 8px;width: 50px;">
 										<span style="display: none;width: 35px;" id="spanCategory">
 											<img src="${ctx}/resources/images/fancybox_loading.gif" alt="Loading..." style="width: 25px;" />
 										</span>
 									</span>
-								</p>
-							</li>
-							<li><label>Sub Category:</label>	
-								<p>
-									<form:select path="subCategoryId"  id="subCategories" onchange="getTopicsBySubcategoryId()"></form:select>
+									</div>
+							</div>
+							<div class="col-md-6">
+							<label>Sub Category:</label>	
+								<div class=:form-group">
+									<form:select path="subCategoryId"  id="subCategories" onchange="getTopicsBySubcategoryId()"  class="form-control"></form:select>
 									<span style="display: inline-block;margin-left: 8px;width: 50px;">
 										<span style="display: none;width: 35px;" id="spanSubCategory">
 											<img src="${ctx}/resources/images/fancybox_loading.gif" alt="Loading..." style="width: 25px;" />
 										</span>
 									</span>
-								</p>
-							</li>
-							<li><label>Topic:</label>	
-								<p>
-									<form:select path="topicId"  id="topics" onchange="getSubTopicsByTopicId()"></form:select>
+									</div>
+							</div>
+							<div class="col-md-6">
+							<label>Topic:</label>	
+								<div class=:form-group">
+									<form:select path="topicId"  id="topics" onchange="getSubTopicsByTopicId()"  class="form-control"></form:select>
 									<span style="display: inline-block;margin-left: 8px;width: 50px;">
 										<span style="display: none;width: 35px;" id="spanTopic">
 											<img src="${ctx}/resources/images/fancybox_loading.gif" alt="Loading..." style="width: 25px;" />
 										</span>
 									</span>
-								</p>
-							</li>
-							<li id="optional"><label>Sub Topic:</label>	
-								<p id="dynamicSubTopic">
+									</div>
+							</div>
+							<div class="col-md-6" id="optional">
+							<label>Sub Topic:</label>	
+								<div class="form-group" id="dynamicSubTopic">
 									<span style="display: inline-block;margin-left: 8px;width: 50px;">
 										<span style="display: none;width: 35px;" id="spanSubTopic">
 											<img src="${ctx}/resources/images/fancybox_loading.gif" alt="Loading..." style="width: 25px;" />
 										</span>
 									</span>
-								<p>
-							</li>
-							<li><input type="button" name="Add Content" value="Save" id="btnLogin" onclick="submitForm()"></li>
-						</ul>
+							</div>
+							</div>
+							<div class="col-md-12 mt-4 text-center">
+													<input type="button" name="Add Content" value="Save" id="btnLogin" onclick="submitForm()">
+						
 						<input type="hidden" value="${sessionScope.user.id}" id = "userId"/>
+					
+						</div>
+						</div>
 					</form:form>
-				</div>
-			</div>
-		</div>
+				
+			
+		
 	</div>
 
 </body>

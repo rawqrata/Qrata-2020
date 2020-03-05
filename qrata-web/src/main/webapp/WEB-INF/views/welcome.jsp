@@ -179,9 +179,10 @@
       </div>
       <div id="menu-bar">
          <div class="row">
-            <div class="col-md-4">
+           
                <!--menu bar left-->
                <c:if test="${USERROLEID ne EXPERTID}">
+                <div class="col-md-4">
                   <div class="menu-box">
                      <div class="heading-text-new-new">Manage</div>
                      <div class="border-bottom-title"></div>
@@ -204,10 +205,12 @@
                         <%-- 						</c:if>					 --%>
                      </ul>
                   </div>
+                   </div>
                </c:if>
-            </div>
-            <div class="col-md-4">
+           
+           
                <c:if test="${USERROLEID ne EXPERTID}">
+                <div class="col-md-4">
                   <div class="menu-box">
                      <div class="heading-text-new-new">Ratings</div>
                      <div class="border-bottom-title"></div>
@@ -220,11 +223,13 @@
                         <li><a id="findOfflineLink" href="${ctx}/admin/findOfflineContents.htm" class="ratings">- Find Offline Content</a></li>
                      </ul>
                   </div>
+                    </div>
                </c:if>
-            </div>
-            <div class="col-md-4">
+          
+         
                <c:choose>
                   <c:when test="${USERROLEID ne EXPERTID}">
+                     <div class="col-md-4">
                      <div class="menu-box">
                         <div class="heading-text-new-new">My Rating Data</div>
                         <div class="border-bottom-title"></div>
@@ -272,8 +277,9 @@
             </div>
             </c:otherwise>
             </c:choose>
-            <div class="col-md-4">
+           
                <c:if test="${USERROLEID ne EXPERTID}">
+                <div class="col-md-4">
                   <div class="menu-box">
                      <div class="heading-text-new-new">Copying</div>
                      <div class="border-bottom-title"></div>
@@ -281,11 +287,12 @@
                         <li><a id="copyContentsLink" href="${ctx}/admin/copyContents.htm" class="copyContents">- Copy Content</a></li>
                      </ul>
                   </div>
+                  </div>
                </c:if>
-            </div>
+            
          </div>
       </div>
-      </div>
+     
       <c:if test="${empty USERROLEID }">
          <div id="menu">
             <div class="heading-text-new3">Advertising</div>
