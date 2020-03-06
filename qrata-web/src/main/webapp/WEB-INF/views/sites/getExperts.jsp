@@ -41,7 +41,7 @@
 		
 					                <div class="row">
 			               <div class="col-md-12">
-                  <div class=:form-group">
+                  <div class="form-group">
                      <div class="input-group mb-2 serachinputbox">
                     	<form:input path="userSearchVal" cssClass="span2 form-control search-query" placeholder="Enter First Name or Last Name or Login or Email" 
 					id="expertSearch" cssStyle="width: 310px;" />

@@ -449,8 +449,13 @@ function validateAddSite() {
 </script>
 </head>
 <body>
+<div class="row">
+<div class="col-md-12">
 	<div class="date-text">&nbsp;</div>
-	
+	</div>
+	</div>
+	<div class="row">
+	<div class="col-md-8 col-8">
 	<ul class="shape-design">
 		<li class="shape1">&nbsp;</li>
 		<li>Manage</li>
@@ -459,31 +464,36 @@ function validateAddSite() {
 		<li><img src="${ctx}/resources/images/breadcrumb-arrow.png" /></li>
 		<li>Edit Content</li>
 	</ul>
+	</div>
+	<div class="col-md-4 col-4">
+	
 	<div class="back-button"  ><a href="javascript:;" onclick="javascript:historyButton()">&#60;&#60; Go Back </a></div>
-	<div class="center-table">
-		<div class="bo-login-box">
-			<div class="login-heading-inner">Content ID (auto assigned)</div>
-			<div class="site-infologin-section">
-				<div class="defaul-login-form2">
-					<form:form commandName="siteForm" action="editSite.htm" enctype="multipart/form-data"
+	</div>
+	</div>
+	
+	<div class="sitebox">
+				      <div class="form-box mt-4">
+         <div class="login-heading-inner-form">Content ID (auto assigned)</div>
+							<form:form commandName="siteForm" action="editSite.htm" enctype="multipart/form-data"
 						method="post" class="form-wrapper" id="addSite" name="addSite">
-						<ul>
-							<li><label>Content Name:</label>
-								<p>
-									<form:input path="name" class="input_border email"  id="siteName" value="" />
+						<div class="row">
+						<div class="col-md-6">
+							<label>Content Name:</label>
+								<div class="form-group">
+									<form:input path="name" class="input_border form-control email"  id="siteName" value="" />
 									<form:input type="hidden" path="siteUuid" />
-								</p>
-							</li>
-							<li><label>URL:</label>
-								<p>
-									<form:input path="url" class="input_border email" id="txtEmail" value="" />
-								</p>
-							</li>
-							<li style="margin: -16px 0px 0px 105px;">
-								<i style="font-size: 10px">(Enter full URL example: http://www.example.com/index.htm)</i>
-							</li>
-							<li><label>Logo:</label>
-								<p>
+									</div>
+							</div>
+							<div class="col-md-6">
+								<div class="form-group">
+							<label>URL:</label>
+							<form:input path="url" class="input_border form-control email" id="txtEmail" value="" />
+							<i style="font-size: 10px">(Enter full URL example: http://www.example.com/index.htm)</i>
+								</div>
+							</div>
+							<div class="col-md-6">
+							<label>Logo:</label>
+							<div class="form-group">
 									<c:choose>
 										<c:when test="${not empty siteForm.imageName}">
 											<img alt="Content Image" src="${ctx}/admin/getContentImage.htm?siteId=${siteForm.id}" />
@@ -502,12 +512,12 @@ function validateAddSite() {
 											</span>
 										</span>
 									</c:if>
-								</p>
-							</li>
-							
-							<li><label>Domain:</label>	
-								<p>
-									<select id="domains" name="domainId" disabled="disabled">
+									</div>
+							</div>
+							<div class="col-md-6">
+							<label>Domain:</label>	
+								<div class="form-group">
+									<select id="domains" name="domainId" disabled="disabled" class="form-control">
 										<option value="${siteForm.domainId}">${siteForm.domainName}</option>
 									</select>
 									<span style="display: inline-block;margin-left: 8px;width: 50px;">
@@ -515,11 +525,12 @@ function validateAddSite() {
 											<img src="${ctx}/resources/images/fancybox_loading.gif" alt="Loading..." style="width: 25px;" />
 										</span>
 									</span>
-								</p>
-							</li>
-							<li><label>Category:</label>	
-								<p>
-									<select id="categories" name="categoryId" disabled="disabled">
+									</div>
+							</div>
+							<div class="col-md-6">
+							<label>Category:</label>	
+							<div class="form-group">
+									<select id="categories" name="categoryId" disabled="disabled" class="form-control">
 										<option value="${siteForm.categoryId}">${siteForm.categoryName}
 									</select>
 									<span style="display: inline-block;margin-left: 8px;width: 50px;">
@@ -527,11 +538,12 @@ function validateAddSite() {
 											<img src="${ctx}/resources/images/fancybox_loading.gif" alt="Loading..." style="width: 25px;" />
 										</span>
 									</span>
-								</p>
-							</li>
-							<li><label>Sub Category:</label>	
-								<p>
-									<select id="subCategories" name="subCategoryId" disabled="disabled">
+									</div>
+							</div>
+							<div class="col-md-6">
+							<label>Sub Category:</label>	
+							<div class="form-group">
+									<select id="subCategories" name="subCategoryId" disabled="disabled" class="form-control">
 										<option value="${siteForm.subCategoryId}">${siteForm.subCategoryName}</option>
 									</select>
 									<span style="display: inline-block;margin-left: 8px;width: 50px;">
@@ -539,11 +551,12 @@ function validateAddSite() {
 											<img src="${ctx}/resources/images/fancybox_loading.gif" alt="Loading..." style="width: 25px;" />
 										</span>
 									</span>
-								</p>
-							</li>
-							<li><label>Topic:</label>	
-								<p>
-									<select  id="topics" name="topicId" disabled="disabled">
+									</div>
+							</div>
+							<div class="col-md-6">
+							<label>Topic:</label>	
+							<div class="form-group">
+									<select  id="topics" name="topicId" disabled="disabled" class="form-control">
 										<option value="${siteForm.topicId}" >${siteForm.topicName}</option>
 									</select>
 									<span style="display: inline-block;margin-left: 8px;width: 50px;">
@@ -551,12 +564,14 @@ function validateAddSite() {
 											<img src="${ctx}/resources/images/fancybox_loading.gif" alt="Loading..." style="width: 25px;" />
 										</span>
 									</span>
-								</p>
-							</li>
+									</div>
+							</div>
 						
 						<c:if test="${siteForm.subTopicId ne 0}">
-							<li><label>Sub Topic:</label>
-								<select id="subTopics" name="subTopicId" disabled="disabled">
+						<div class="col-md-6">
+							<label>Sub Topic:</label>
+							<div class="form-group">
+								<select id="subTopics" name="subTopicId" disabled="disabled" class="form-control">
 									<option value="${siteForm.subTopicId }">${siteForm.subTopicName }</option>
 								</select>
 								<span style="display: inline-block;margin-left: 8px;width: 50px;">
@@ -564,20 +579,22 @@ function validateAddSite() {
 										<img src="${ctx}/resources/images/fancybox_loading.gif" alt="Loading..." style="width: 25px;" />
 									</span>
 								</span>	
-							</li>
+								</div>
+							</div>
 						</c:if>
 							
 							
-							<li><div style="text-align: left;">
-							<input type="button" name="Edit Content" value="Save" style="background-color:grey" onclick="submitForm()"></div></li>
-						</ul>
+							<div class="col-md-12 text-center">
+							<input type="button" name="Edit Content" value="Save" style="background-color:grey" onclick="submitForm()"></div>
+						
 						<input type="hidden" name ="prp" id ="prp" value="${prp}"/>
 						<input type="hidden" name ="orp" id ="orp" value="${orp}"/>
 						<input type="hidden" name ="sfrp" id ="sfrp" value="${sfrp}"/>
 						<input type="hidden" name="sunrp" id="sunrp" value="${sunrp}"> 
+						</div>
 					</form:form>
-				</div>
-			</div>
+			
+		
 		</div>
 	</div>
 

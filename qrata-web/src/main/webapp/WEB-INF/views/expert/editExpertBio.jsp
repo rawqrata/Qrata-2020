@@ -84,6 +84,7 @@
 	</div>
 	<form:form commandName="bioForm" action="saveExpertBio.htm" enctype="multipart/form-data" method="POST" id="editForm">
 		<div class="row">
+		<div class="col-md-12">
 			<form:input path="id" type="hidden" id="expertId" />
 	
 			<div class="user-photo">
@@ -114,15 +115,12 @@
 					 </span>
 				</div>
 			</div>
-			<table class="mediaTable" style="background-color: #E7E7E4;">
-				<thead>
-					<tr>
-						<th colspan="2" class="essential persist">Expert Bio</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr bgcolor="#F0F3F2">
-						<td width="20%" valign="top"><p>
+			</div>
+			
+				<div class="col-md-12">
+						<label>Expert Bio</label>
+				<div class="form-group">
+				
 								<%-- <div class="photo-box">
 	                          	<span class="pict-box">
 	                          	 <img src="${ctx}/resources/images/photo.png" alt=""  />
@@ -132,10 +130,10 @@
 	                              </div> --%>
 								<form:textarea cssClass="ckeditor" cols="10" id="editor1"
 									path="bio" rows="10"></form:textarea></td>
-					</tr>
-	
-				</tbody>
-			</table>
+									</div>
+				
+	</div>
+	<div class="col-md-12 text-center">
 			<input type="submit" value="Save" />
 		</div>
 		
@@ -143,6 +141,7 @@
 		<input type="hidden" name ="orp" id ="orp" value="${orp}"/>
 		<input type="hidden" name ="sfrp" id ="sfrp" value="${sfrp}"/>
 		<input type="hidden" name="sunrp" id="sunrp" value="${sunrp}"> 
+		</div>
 	</form:form>
 </body>
 </html>

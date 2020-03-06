@@ -67,6 +67,8 @@
 </script>
 </head>
 <body>
+<div class="row">
+<div class="col-md-12">
 	<c:choose>
 		<c:when test="${param.success eq '1' }">
 			<div class="success-box">
@@ -94,7 +96,15 @@
 			</div>
 		</c:when>
 	</c:choose>
+	</div>
+	</div>
+<div class="row">
+<div class="col-md-12">
 <div class="date-text">&nbsp;</div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-8 col-8">
 	<ul class="shape-design">
 		<li class="shape1">&nbsp;</li>
 		<c:if test="${type eq 'a'}">
@@ -127,12 +137,15 @@
 		<li><img src="${ctx}/resources/images/breadcrumb-arrow.png" /></li>
 		<li>Content Review</li>
 	</ul>
+	</div>
+	<div class="col-md-4 col-4">
 	<div class="back-button">
 		<a href="javascript:;" onclick="javascript:historyButton()">&#60;&#60;
 			Go Back </a>
 	</div>
-
-	<div class="center-table">
+	</div>
+</div>
+	<div class="editorbox">
 		<div style="float: left; width: 96%; margin-left: 1px;" class="">
 			<ul>
 				<li style="display:block"><b>Content Name :</b> <c:out value="${site.name}"/></li>

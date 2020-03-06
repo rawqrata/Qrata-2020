@@ -99,7 +99,7 @@
                   </h5>
                </div>
                <div class="col-md-12">
-                  <div class=:form-group">
+                  <div class="form-group">
                      <div class="input-group mb-2 serachinputbox">
                         <form:input path="domainSearchVal" cssClass="span2 form-control search-query" placeholder="Enter category name" 
                            id="categorySearch" cssStyle="width: 310px;" />

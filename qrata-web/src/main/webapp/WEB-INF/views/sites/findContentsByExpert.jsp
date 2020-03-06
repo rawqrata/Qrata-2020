@@ -44,7 +44,7 @@
 		<form:form cssClass="form-search" commandName="siteForm" action="findContentsByExpert.htm?id=${user.id}" autocomplete="off" method="post">
 						                <div class="row">
 			               <div class="col-md-12">
-                  <div class=:form-group">
+                  <div class="form-group">
                      <div class="input-group mb-2 serachinputbox">
                     	<form:input path="siteSearchVal" cssClass="span2 form-control search-query" placeholder="Enter content name"
 					id="reviewSearch" cssStyle="width: 310px;" />

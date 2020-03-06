@@ -92,48 +92,61 @@ function validateAddSite() {
 
 </head>
 <body>
+<div class="row">
+<div class="col-md-12">
 	<div class="date-text">Loaded in 0.0213 seconds</div>
-	
+	</div>
+	</div>
+	<div class="row">
+	<div class="col-md-8 col-8">
 	<ul class="shape-design">
-		<li class="shape1">&nbsp;</li>
-		<li>My Rating Data</li>
+				<li>My Rating Data</li>
 		<li><img src="${ctx}/resources/images/breadcrumb-arrow.png" /></li>
 		<li>Edit Content</li>
 	</ul>
-
+</div>
+<div class="col-md-4 col-4">
 	<div class="back-button"  ><a href="javascript:;" onclick="javascript:historyButton()">&#60;&#60; Go Back </a></div>
+	</div>
+	</div>
+	
 	<c:choose>
+	<div class="row">
 		<c:when test="${not empty topic.parentTopic.id }">
-			<div class="breadcrumb-style"><h5>Root://<b:breadcrumb separator="/" serialId="${topic.parentTopic.id}" type="TOPIC" />/${topic.name}</h5></div>
+			<div class="cool-md-12"><h5>Root://<b:breadcrumb separator="/" serialId="${topic.parentTopic.id}" type="TOPIC" />/${topic.name}</h5></div>
 		</c:when>
 		<c:otherwise>
-			<div class="breadcrumb-style"><h5>Root://<b:breadcrumb separator="/" serialId="${topic.category.id}" type="CATEGORY" />/${topic.name}</h5></div>
+			<div class="col-md-12"><h5>Root://<b:breadcrumb separator="/" serialId="${topic.category.id}" type="CATEGORY" />/${topic.name}</h5></div>
 		</c:otherwise>
+		</div>
 	</c:choose>
-	<div class="center-table">
-		<div class="bo-login-box">
-			<div class="login-heading-inner">Content Info ID (auto assigned)</div>
-			<div class="site-infologin-section">
-				<div class="defaul-login-form2">
+	<div class="infobox">
+			      <div class="form-box mt-4">
+         <div class="login-heading-inner-form">Content Info ID (auto assigned)</div>
+		
+				
 					<form:form commandName="siteForm" action="editSite.htm" method="post" 
 						class="form-wrapper" id="addSite" name="addSite">
-						<ul>
-							<li><label>Site Name:</label>
-								<p>
-									<form:input path="name" class="input_border email"  id="siteName" name="siteName"
+					<div class="row">
+					<div class="col-md-6">
+							<label>Site Name:</label>
+							<div class="form-group">
+									<form:input path="name" class="input_border form-control email"  id="siteName" name="siteName"
 										value="" />
-								</p>
-							</li>
-							<li><label>URL:</label>
-								<p>
-									<form:input path="url" class="input_border email"  id="txtEmail" value="" />
-								</p>
-							</li>
-							<li style="margin: -16px 0px 0px 105px;">
-								<i style="font-size: 10px">(Enter full URL example: http://www.example.com/index.htm)</i>
-							</li>
-							<li><label>Logo:</label>
-								<p>
+										</div>
+							</div>
+							<div class="col-md-6">
+							<label>URL:</label>
+								<div class="form-group">
+									<form:input path="url" class="input_border form-control email"  id="txtEmail" value="" />
+									<i style="font-size: 10px">(Enter full URL example: http://www.example.com/index.htm)</i>
+									</div>
+						</div>
+							
+								
+						<div class="col-md-12">
+							<label>Logo :</label>
+								<div class="form-group">
 									<c:choose>
 										<c:when test="${not empty siteForm.imageName}">
 											<img alt="Content Image" src="${ctx}/admin/getContentImage.htm?siteId=${siteForm.id}" />
@@ -142,8 +155,7 @@ function validateAddSite() {
 											<img alt="Content Image" src="${ctx}/resources/images/column-image.gif" />
 										</c:otherwise>
 									</c:choose>
-								</p>
-							</li>
+						
 							
 								<form:hidden path="siteUuid"/>
 								<form:hidden path="domainId"/>
@@ -151,17 +163,22 @@ function validateAddSite() {
 								<form:hidden path="subCategoryId"/>
 								<form:hidden path="topicId"  id="topic"/>
 								<form:hidden path="subTopicId"/>
-							<li><input type="button" name="Add Content" value="Save" id="btnLogin" onclick="submitForm()"></li>
+								</div>
+								</div>
+								<div class="col-md-12 text-center">
+							<input type="button" name="Add Content" value="Save" id="btnLogin" onclick="submitForm()">
+							</div>
 							
-						</ul>
+						
 						<input type="hidden" name ="prp" id ="prp" value="${prp}"/>
 						<input type="hidden" name ="orp" id ="orp" value="${orp}"/>
 						<input type="hidden" name ="sfrp" id ="sfrp" value="${sfrp}"/>
-						<input type="hidden" name="sunrp" id="sunrp" value="${sunrp}"> 
+						<input type="hidden" name="sunrp" id="sunrp" value="${sunrp}">
+						</div> 
 					</form:form>
-				</div>
+			
 
-			</div>
+		
 		</div>
 
 
