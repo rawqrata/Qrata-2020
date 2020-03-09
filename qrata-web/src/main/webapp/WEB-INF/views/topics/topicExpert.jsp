@@ -199,12 +199,12 @@
 						</td>
 		
 						<td width="5%" style="vertical-align: middle;" rowspan="3"> 
-							<div style="float: left;width: 100%;padding-bottom: 100px;">
-								<a href="javascript:;" onclick="assignExpert();"><i class="icon-arrow-right"></i></a>
+							<div style="float: left;width: 100%;">
+								<a href="javascript:;" onclick="assignExpert();"><i class="fa fa-arrow-right"></i></a>
 							</div>
 							<div style="float: left;width: 100%;padding-top: 100px;">
 								<input type="hidden" name="topicId" id="topicId" value="${topic.id}" />
-								<a href="javascript:;" onclick="unAssignExpert();"><i class="icon-arrow-left"></i></a>
+								<a href="javascript:;" onclick="unAssignExpert();"><i class="fa fa-arrow-left"></i></a>
 							</div>
 						</td>
 		
@@ -222,7 +222,7 @@
 				</tbody>
 			</table>
 			<div style="text-align: center;">
-				<input type="button" name="btn" value="Submit" id="btnSubmit" onclick="submitTopicExpert();" >
+				<input type="button" name="btn" class="btn btn-info" value="Submit" id="btnSubmit" onclick="submitTopicExpert();" >
 			</div>
 		</form>
 	</div>
