@@ -106,7 +106,7 @@
 <div class="row">
 <div class="col-md-8 col-8">
 	<ul class="shape-design">
-		<li class="shape1">&nbsp;</li>
+	
 		<c:if test="${type eq 'a'}">
 			<li>My Rating Data</li>		
 			<li><img src="${ctx}/resources/images/breadcrumb-arrow.png" /></li>
@@ -146,27 +146,34 @@
 	</div>
 </div>
 	<div class="editorbox">
-		<div style="float: left; width: 96%; margin-left: 1px;" class="">
-			<ul>
+	<div class="row">
+		<div class="col-md-12">
+			<ul class="pl-0">
 				<li style="display:block"><b>Content Name :</b> <c:out value="${site.name}"/></li>
 				<li style="display:block"><b>Content URL :</b> <c:out value="${site.url}"/></li>
 			</ul>
 		</div>
 		
-		<div>
+		<div class="col-md-12">
 			<h5>
 				<a href="listDomains.htm">Root</a>://
 				<b:breadcrumb serialId="${site.id}-${param.topicId}" separator="/"
 					type="SITE" />
 			</h5>
 		</div>
-	<div class="rating-information">
+		<div class="col-md-12">
+			<div class="rating-information">
 		<ul>
 			<li style="display:block">Criteria importance is a number indicating how important a specific criterion in rating contents</li>
 			<li style="margin-left:15px">1 (one) means a specific criterion is <u>not important</u> to content rated in your topic(s).</li>
 			<li style="margin-left:15px">10 (ten) means a specific criterion is <u>extremely important</u> to content rated in your topic(s)</li>
 		</ul>
 	</div>
+		
+		
+		</div>
+		</div>
+
 	
 		<form class="none" action="saveSiteCriteriaRatings.htm" method="post" id="ratingsForm" name="ratingsForm">
 			<table width="100%">
