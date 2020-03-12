@@ -459,7 +459,8 @@ function validateAddSite() {
                   <div id="msgDiv" style="float: left;"></div>
                   <label>Logo:</label>
                   <div class="form-group">
-                    <form:input type="file" path="siteLogo" id="the_file" size="18" cssClass="upload-browse input_border form-control" />
+                    <form:input type="file" path="siteLogo" id="the_file" size="18" cssClass="upload-browse  input_border form-control" />
+
                   </div>
                </div>
                <div class="col-md-6">
@@ -469,7 +470,7 @@ function validateAddSite() {
 						<form:option value="0">Select Domain</form:option>		
 						<form:options items="${domains}" itemValue="id" itemLabel="name" />
 					</form:select>
-					<a href="addDomain.htm" style="margin-left: 10px;font-size: 11px;"><i class="fa fa-plus-square-o"></i></a>
+					<span class="addicon-b"><a href="addDomain.htm"><i class="fa fa-plus"></i></a></span>
 					<span style="display: inline-block;margin-left: 8px;width: 50px;">
 						<span style="display: none;width: 35px;" id="spanDomain">
 							<img src="${ctx}/resources/images/fancybox_loading.gif" alt="Loading..." style="width: 25px;" />
@@ -481,7 +482,7 @@ function validateAddSite() {
                   <label>Category:</label>
                   <div class="form-group">
                     <form:select  path="categoryId"  id="categories" onchange="getSubCategoriesByCategoryId()" class="input_border form-control"></form:select>
-					<a href="javascript:;" onclick = "addCategory()" style="margin-left: 10px;font-size: 11px;"><i class="fa fa-plus-square-o"></i></a>
+					<span class="addicon-b"><a href="javascript:;" onclick = "addCategory()"><i class="fa fa-plus"></i></a></span>
 					<span style="display: inline-block;margin-left: 8px;width: 50px;">
 						<span style="display: none;width: 35px;" id="spanCategory">
 							<img src="${ctx}/resources/images/fancybox_loading.gif" alt="Loading..." style="width: 25px;" />
@@ -494,7 +495,7 @@ function validateAddSite() {
                   <label>Sub Category:</label>
                   <div class="form-group">
                     <form:select path="subCategoryId"  id="subCategories" onchange="getTopicsBySubcategoryId()" class="input_border form-control"></form:select>
-					<a id = "subCategory" href="javascript:;" onclick = "addSubCategory()" style="margin-left: 10px;font-size: 11px;"><i class="fa fa-plus-square-o"></i></a>
+					<span class="addicon-b"><a id = "subCategory" href="javascript:;" onclick = "addSubCategory()"><i class="fa fa-plus"></i></a></span>
 					<span style="display: inline-block;margin-left: 8px;width: 50px;">
 						<span style="display: none;width: 35px;" id="spanSubCategory">
 							<img src="${ctx}/resources/images/fancybox_loading.gif" alt="Loading..." style="width: 25px;" />
@@ -506,7 +507,7 @@ function validateAddSite() {
                   <label>Topic:</label>
                   <div class="form-group">
                     <form:select path="topicId"  id="topics" onchange="getSubTopicsByTopicId()" class="input_border form-control"></form:select>
-					<a id = "topic" href="javascript:;" onclick = "addTopic()" style="margin-left: 10px;font-size: 11px;"><i class="fa fa-plus-square-o"></i></a>
+					<span class="addicon-b"><a id = "topic" href="javascript:;" onclick = "addTopic()"><i class="fa fa-plus"></i></a></span>
 					<span style="display: inline-block;margin-left: 8px;width: 50px;">
 						<span style="display: none;width: 35px;" id="spanTopic">
 							<img src="${ctx}/resources/images/fancybox_loading.gif" alt="Loading..." style="width: 25px;" />
@@ -518,7 +519,7 @@ function validateAddSite() {
                   <label>Sub Topic:</label>
                   <div class="form-group" >
                   <form:select path="subTopicId"  id="subTopics" class="input_border form-control"></form:select>
-                  	<a id = "subTopic" href="javascript:;" onclick = "addSubTopic()" style="margin-left: 10px;font-size: 11px;"><i class="fa fa-plus-square-o"></i></a>
+                  	<span class="addicon-b"><a id = "subTopic" href="javascript:;" onclick = "addSubTopic()"><i class="fa fa-plus"></i></a></span>
                     <span style="display: inline-block;margin-left: 8px;width: 50px;">
 						<span style="display: none;width: 35px;" id="spanSubTopic">
 							<img src="${ctx}/resources/images/fancybox_loading.gif" alt="Loading..." style="width: 25px;" />

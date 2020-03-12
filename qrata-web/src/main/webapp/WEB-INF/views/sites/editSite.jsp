@@ -493,7 +493,7 @@ function validateAddSite() {
 							</div>
 							<div class="col-md-6">
 							<label>Logo:</label>
-							<div class="form-group">
+							<div class="form-group text-center editorfileupload">
 									<c:choose>
 										<c:when test="${not empty siteForm.imageName}">
 											<img alt="Content Image" src="${ctx}/admin/getContentImage.htm?siteId=${siteForm.id}" />
@@ -502,7 +502,7 @@ function validateAddSite() {
 											<img alt="Content Image" src="${ctx}/resources/images/column-image.gif" />
 										</c:otherwise>
 									</c:choose>
-									<form:input type="file" path="siteLogo" id="the_file" size="18" cssClass="upload-browse" />
+									<form:input type="file" path="siteLogo" id="the_file" size="18" cssClass="upload-browse form-control" />
 									
 									<c:if test="${not empty siteForm.imageName}">
 										<br/> <a id="removeLogo" href="javascript:;" style="text-decoration: none;cursor: pointer;">Remove</a>
